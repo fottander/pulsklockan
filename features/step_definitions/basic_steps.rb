@@ -13,3 +13,9 @@ end
 Then(/^show me the page$/) do
  save_and_open_page
 end
+
+Given("the following categories exists") do |table|
+  table.hashes.each do |hash|
+    create(:category, hash)
+  end
+end
