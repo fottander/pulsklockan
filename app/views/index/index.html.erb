@@ -1,8 +1,10 @@
 <div class='container-main'>
-<h1>Välkommen till pulsklockan</h1>
-<p>La lalal lalal label</p>
-<% @categories.each do |category| %>
-  Id: <%= category.id %><br />
-  Kategori: <%= category.name %>
-<% end %>
+  <div class='header-main'>
+    <h1>Välkommen till pulsklockan</h1>
+    <p>La lalal lalal label</p>
+    <% @categories.each do |category| %>
+      Id: <%= category.id %><br />
+      Kategori: <%= category.name %>
+    <% end %>
+  </div>
 </div>
