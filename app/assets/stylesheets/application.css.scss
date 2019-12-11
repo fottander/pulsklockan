@@ -31,7 +31,7 @@ body {
   padding-right: 3em;
   height: 50px;
   width: 100%;
-  background-color: #4d4d4d;
+  background-color: #fff;
   position: relative;
 }
 
@@ -42,7 +42,7 @@ body {
 .nav > .nav-header > .nav-title {
   display: inline-block;
   font-size: 22px;
-  color: #fff;
+  color: #1F1F1F;
   padding: 10px 10px 10px 10px;
 }
 
@@ -60,7 +60,7 @@ body {
   display: inline-block;
   padding: 13px 10px 13px 10px;
   text-decoration: none;
-  color: #efefef;
+  color: #1F1F1F;
 }
 
 .nav > .nav-links > a:hover {
@@ -135,4 +135,31 @@ body {
 
 .container-main {
   text-align: center;
+  background-color: #ECECEC;
+  min-height: 80vh;
+}
+
+/* FOOTER */
+
+.footer {
+  display: block;
+}
+
+.footer-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footer-container {
+  padding: 2em 2em 2em 2em;
+  text-align: center;
+}
+
+/* FOOTER MEDIASCREEN MAX 39.9375 */
+
+@media screen and (max-width: 39.9375em) {
+  .footer-grid {
+    flex-direction: column;
+  }
 }
