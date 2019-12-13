@@ -28,8 +28,8 @@ body {
 /* NAVBAR */
 
 .nav {
-  padding-left: 10em;
-  padding-right: 10em;
+  padding-left: 9em;
+  padding-right: 9em;
   height: 50px;
   width: 100%;
   background-color: #fff;
@@ -55,6 +55,7 @@ body {
   display: inline;
   float: right;
   font-size: 0.8em;
+  font-weight: 500;
 }
 
 .nav > .nav-links > a {
@@ -74,18 +75,26 @@ body {
 
 /* NAVBAR MEDIASCREEN 50-60em */
 
-@media screen and (min-width: 50em) and (max-width: 60em) {
+@media screen and (min-width: 55em) and (max-width: 63em) {
   .nav {
-    padding-left: 6em;
-    padding-right: 6em;
+    padding-left: 3.5em;
+    padding-right: 3.5em;
   }
 }
 
 /* NAVBAR MEDIASCREEN 39.9375-50em */
-@media screen and (min-width: 39.9375em) and (max-width: 50em) {
+@media screen and (min-width: 39.9375em) and (max-width: 55em) {
   .nav {
     padding-left: 0em;
     padding-right: 0em;
+  }
+
+  .nav > .nav-header > .nav-title {
+    font-size: 20px;
+  }
+
+  .nav > .nav-links > a {
+    padding: 16px 6px 10px 6px;
   }
 }
 
@@ -152,11 +161,30 @@ body {
 
 .container-main .header-main {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  max-width: 65%;
+  justify-content: center;
   padding: 1em 1em 1em 1em;
   color: #112151;
+}
+
+.container-main .header-main .header-left {
+  width: 60%;
+}
+
+.container-main .header-main .header-right {
+}
+
+.container-main .header-main .header-right .header-img1 {
+  height: 15em;
+}
+.container-main .header-main .header-right .header-img2 {
+  height: 15em;
+}
+.container-main .header-main .header-right .header-img3 {
+  height: 15em;
+
+transform: rotate(90deg);
 }
 
 /* MAIN CONTAINER MEDIASCREEN MAX 39.9375 */
@@ -167,7 +195,29 @@ body {
   }
 
   .container-main .header-main {
-    max-width: 85%;
+    flex-direction: column-reverse;
+  }
+
+  .container-main .header-main .header-left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .container-main .header-main .header-right {
+    text-align: center;
+  }
+
+  .container-main .header-main .header-right .header-img1 {
+    height: 5em;
+    padding: 0em 1em 0em 1em;
+  }
+  .container-main .header-main .header-right .header-img2 {
+    height: 5em;
+    padding: 0em 1em 0em 1em;
+  }
+  .container-main .header-main .header-right .header-img3 {
+    height: 5em;
+    padding: 0em 1em 0em 1em;
   }
 }
 
