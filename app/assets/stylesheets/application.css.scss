@@ -1,0 +1,251 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /* --- Generic Styles --- */
+ * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+}
+
+/* NAVBAR */
+
+.nav {
+  padding-left: 9em;
+  padding-right: 9em;
+  height: 50px;
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #1F1F1F;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 16px 10px 10px 10px;
+  text-decoration: none;
+  color: #1F1F1F;
+}
+
+.nav > .nav-links > a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+/* NAVBAR MEDIASCREEN 50-60em */
+
+@media screen and (min-width: 55em) and (max-width: 63em) {
+  .nav {
+    padding-left: 3.5em;
+    padding-right: 3.5em;
+  }
+}
+
+/* NAVBAR MEDIASCREEN 39.9375-50em */
+@media screen and (min-width: 39.9375em) and (max-width: 55em) {
+  .nav {
+    padding-left: 0em;
+    padding-right: 0em;
+  }
+
+  .nav > .nav-header > .nav-title {
+    font-size: 20px;
+  }
+
+  .nav > .nav-links > a {
+    padding: 16px 6px 10px 6px;
+  }
+}
+
+/* NAVBAR MEDIASCREEN MAX 39.9375 */
+@media screen and (max-width: 39.9375em) {
+  .nav {
+    padding-left: 0em;
+    padding-right: 0em;
+  }
+
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+    font-size: 1.2em;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+/* MAIN CONTAINER */
+
+.container-main {
+  background-color: #f9f9f9;
+  min-height: 80vh;
+  display: block;
+}
+
+.container-main .header-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 1em 1em 1em;
+  color: #112151;
+}
+
+.container-main .header-main .header-left {
+  width: 60%;
+}
+
+.container-main .header-main .header-right {
+}
+
+.container-main .header-main .header-right .header-img1 {
+  height: 15em;
+}
+.container-main .header-main .header-right .header-img2 {
+  height: 15em;
+}
+.container-main .header-main .header-right .header-img3 {
+  height: 15em;
+
+transform: rotate(90deg);
+}
+
+/* MAIN CONTAINER MEDIASCREEN MAX 39.9375 */
+
+@media screen and (max-width: 39.9375em) {
+  .container-main {
+
+  }
+
+  .container-main .header-main {
+    flex-direction: column-reverse;
+  }
+
+  .container-main .header-main .header-left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .container-main .header-main .header-right {
+    text-align: center;
+  }
+
+  .container-main .header-main .header-right .header-img1 {
+    height: 5em;
+    padding: 0em 1em 0em 1em;
+  }
+  .container-main .header-main .header-right .header-img2 {
+    height: 5em;
+    padding: 0em 1em 0em 1em;
+  }
+  .container-main .header-main .header-right .header-img3 {
+    height: 5em;
+    padding: 0em 1em 0em 1em;
+  }
+}
+
+/* FOOTER */
+
+.footer {
+  display: block;
+}
+
+.footer-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footer-container {
+  padding: 2em 2em 2em 2em;
+  text-align: center;
+}
+
+/* FOOTER MEDIASCREEN MAX 39.9375 */
+
+@media screen and (max-width: 39.9375em) {
+  .footer-grid {
+    flex-direction: column;
+  }
+
+  .footer-grid .footer-container {
+    padding: 1em 1em 1em 1em;
+  }
+}
