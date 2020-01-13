@@ -4,12 +4,26 @@ Feature: Homepage
     Given the following categories exists
       | id | name        |
       | 1  | Pulsklockor |
+    Given the following brands exists
+      | id | name   |
+      | 2  | Garmin |
 
   Scenario: I visit the homepage and see some content
     Given I am on the homepage
-    Then I should see "Välkommen till pulsklockan"
+    Then I should see "Alla pulsklockor, aktivitetsarmband och smartklockor på ett och samma ställe"
 
-  Scenario: I see some categories
+  Scenario: I see some categories and brands
     Given I am on the homepage
     Then I should see "Id: 1"
     And I should see "Kategori: Pulsklockor"
+    And I should see "Märke: Garmin"
+
+  Scenario: I click my way through to the category page
+    Given I am on the homepage
+    And I click "Pulsklockor" within button-section
+    Then I should see "Nedan ser du alla pulsklockor"
+
+  Scenario: I click my way through to the brand page
+    Given I am on the homepage
+    And I click "Garmin" within button-section
+    Then I should see "Nedan ser du alla Garmin pulsklockor"
