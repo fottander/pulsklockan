@@ -1,15 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="sv">
   <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
     <title>Pulsklockan</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
   </head>
 
   <body>
+		<div class="nav">
+      <input type="checkbox" id="nav-check">
+      <div class="nav-header">
+        <div class="nav-title">
+          Pulsklockan.com
+        </div>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <a href="#" target="_blank">Pulsklockor</a>
+        <a href="#" target="_blank">Aktivitetsarmband</a>
+        <a href="#" target="_blank">Smarta klockor</a>
+        <a href="#" target="_blank">Pulsmätare</a>
+        <a href="#" target="_blank">Bäst i test</a>
+      </div>
+    </div>
     <%= yield %>
+    <div class='footer'>
+      <div class='footer-grid'>
+        <div class='footer-container'>
+          <h3>waefeerf</h3>
+          <p>rgergeewfewrfgwefwefwr</p>
+        </div>
+        <div class='footer-container'>
+          <h3>waefeerf</h3>
+          <p>rgergeewfewrfgwefwefwr</p>
+        </div>
+        <div class='footer-container'>
+          <h3>waefeerf</h3>
+          <p>rgergeewfewrfgwefwefwr</p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
