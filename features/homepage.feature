@@ -18,7 +18,12 @@ Feature: Homepage
     And I should see "Kategori: Pulsklockor"
     And I should see "Märke: Garmin"
 
-  Scenario: I click my way through categories and brands pages
+  Scenario: I click my way through to the category page
     Given I am on the homepage
     And I click "Pulsklockor" within button-section
     Then I should see "Nedan ser du alla pulsklockor"
+
+  Scenario: I click my way through to the brand page
+    Given I am on the homepage
+    And I click "Garmin" within button-section
+    Then I should see "Nedan ser du alla Garmin pulsklockor"

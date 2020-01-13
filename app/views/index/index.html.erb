@@ -11,7 +11,7 @@
         <br />
         <% @brands.each do |brand| %>
           Id: <%= brand.id %><br />
-          Märke: <%= brand.name %>
+          Märke: <%= link_to "#{brand.name}", brand_path(brand) %> 
         <% end %>
       </div>
     </div>
