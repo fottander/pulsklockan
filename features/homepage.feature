@@ -12,4 +12,10 @@ Feature: Homepage
   Scenario: I see some categories
     Given I am on the homepage
     Then I should see "Id: 1"
-    And I should see "Kategori: Pulsklockor"
+    Then show me the page
+    Then I should see "Kategori: Pulsklockor"
+
+  Scenario: I click my through to a category
+    Given I am on the homepage
+    And I click 'Alla Pulsklockor'
+    Then I should see 'Här nedan hittar du alla pulsklockor'
