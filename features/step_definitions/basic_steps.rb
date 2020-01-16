@@ -10,12 +10,6 @@ Given("I click {string}") do |button|
   click_link_or_button button
 end
 
-Then("I click {string} within button-section") do |link|
-  within ".button-section" do
-    click_link_or_button link
-  end
-end
-
 Then(/^show me the page$/) do
  save_and_open_page
 end
@@ -23,11 +17,5 @@ end
 Given("the following categories exists") do |table|
   table.hashes.each do |hash|
     create(:category, hash)
-  end
-end
-
-Given("the following brands exists") do |table|
-  table.hashes.each do |hash|
-    create(:brand, hash)
   end
 end
