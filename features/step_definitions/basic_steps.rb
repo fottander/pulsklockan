@@ -19,3 +19,9 @@ Given("the following categories exists") do |table|
     create(:category, hash)
   end
 end
+
+Given("the following brands exists") do |table|
+  table.hashes.each do |hash|
+    create(:brand, hash)
+  end
+end
