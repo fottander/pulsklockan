@@ -2,7 +2,6 @@
   <div class='header-main'>
     <div class='header-left'>
       <h1>Alla pulsklockor, aktivitetsarmband och smartklockor på ett och samma ställe</h1>
-      <p>Alla pulsklockor, aktivitetsarmband och smartklockor på ett och samma ställe</p>
       <% @categories.each do |category| %>
         Id: <%= category.id %><br />
         Kategori: <%= link_to "Alla #{category.name}", category_path(category) %>

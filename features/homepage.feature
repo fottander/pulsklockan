@@ -19,10 +19,11 @@ Feature: Homepage
 
   Scenario: I click my through to a category
     Given I am on the homepage
-    And I click 'Alla Pulsklockor'
+    And I click "Alla Pulsklockor"
     Then I should see "Här nedan hittar du alla pulsklockor"
+    And I should see "hello Pulsklockor"
 
   Scenario: I click my through to a brand
     Given I am on the homepage
-    And I click 'Alla Garmin'
+    And I click "Alla Garmin"
     Then I should see "Här nedan hittar du alla Garmin produkter"
