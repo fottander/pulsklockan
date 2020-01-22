@@ -1,5 +1,6 @@
 Category.delete_all
 Brand.delete_all
+Product.delete_all
 
 Category.create(
   name: "Pulsklockor",
@@ -51,5 +52,13 @@ Brand.create(
   id: 195
 )
 
+Product.create(
+  id: 199,
+  name: "Garmin Forerunner 235",
+  price: 1.5,
+  brand_id: 199
+)
+
 puts "Created #{Category.count} categories"
 puts "Created #{Brand.count} brands"
+puts "Created #{Product.count} products"

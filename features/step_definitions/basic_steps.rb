@@ -25,3 +25,9 @@ Given("the following brands exists") do |table|
     create(:brand, hash)
   end
 end
+
+Given("the following products exists") do |table|
+  table.hashes.each do |hash|
+    create(:product, hash)
+  end
+end

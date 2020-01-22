@@ -7,6 +7,9 @@ Feature: Homepage
     Given the following brands exists
       | id | name        |
       | 1  | Garmin      |
+    Given the following products exists
+      | id | name                  | brand_id |
+      | 1  | Garmin Forerunner 235 | 1        |
 
   Scenario: I visit the homepage and see some content
     Given I am on the homepage
@@ -23,7 +26,9 @@ Feature: Homepage
     Then I should see "Här nedan hittar du alla Pulsklockor"
     And I should see "hello Pulsklockor"
 
-  Scenario: I click my through to a brand
+  Scenario: I click my through to a brand and a product
     Given I am on the homepage
     And I click "Alla Garmin"
     Then I should see "Här nedan hittar du alla Garmin produkter"
+    And I click "Garmin Forerunner 235"
+    Then I should see "hello Garmin Forerunner 235"
