@@ -20,7 +20,7 @@ Feature: Homepage
   Scenario: I click my through to a category
     Given I am on the homepage
     And I click "Alla Pulsklockor"
-    Then I should see "Här nedan hittar du alla pulsklockor"
+    Then I should see "Här nedan hittar du alla Pulsklockor"
     And I should see "hello Pulsklockor"
 
   Scenario: I click my through to a brand
