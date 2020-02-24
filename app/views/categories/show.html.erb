@@ -1,4 +1,4 @@
 <div class='container-main'>
-  <h1>Här nedan hittar du alla pulsklockor</h1>
+  <h1>Här nedan hittar du alla <%= @category.try(:name) %></h1>
   <p>hello <%= @category.try(:name) %></p>
 </div>
