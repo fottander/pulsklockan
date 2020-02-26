@@ -3,9 +3,11 @@
   <%= link_to 'Add brand', new_brand_path, class: 'add-button' %>
   <div class="item-container">
     <% @brands.each do |brand| %>
-      <%= brand.id %>
-      <%= brand.name %>
-      <br>
+      <div class='item-box'>
+        <%= brand.id %>
+        <%= brand.name %>
+        <%= link_to 'Edit', edit_brand_path(brand), class: 'reply-button' %>
+      </div>
     <% end %>
   </div>
 </div>

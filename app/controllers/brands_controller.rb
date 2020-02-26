@@ -1,5 +1,5 @@
 class BrandsController < ApplicationController
-  before_action :authenticate_admin!, only: [:new, :create]
+  before_action :authenticate_admin!, only: [:new, :create, :edit, :update]
 
   def show
     @brand = Brand.find(params[:id])
@@ -26,7 +26,23 @@ class BrandsController < ApplicationController
       end
     end
 
+  def edit
+    @brand = Brand.find(params[:id])
   end
+
+  def update
+    @brand = Brand.find(params[:id])
+    respond_to do |format|
+      if @brand.update brand_params
+        format.html { redirect_to edit_brand_path(@brand), notice: 'Brand edited!' }
+        format.json { render :show, status: :ok, location: @brand }
+      else
+        format.html { render :edit }
+        format.json { render json: @brand.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+end
 
   private
 
