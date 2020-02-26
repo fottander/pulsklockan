@@ -12,3 +12,10 @@ Feature: Administrations
     And I fill in "Password" with "123456"
     And I click "Log in"
     Then I should see "Welcome to administrations!"
+
+  Scenario: I log out from administrations
+      Given I am logged in as admin "info@admin.se"
+      And I am on the administrations page
+      Then I should see "Welcome to administrations!"
+      And I click "Log out"
+      Then I should see "Signed out successfully"

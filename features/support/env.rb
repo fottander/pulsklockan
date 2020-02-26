@@ -14,3 +14,10 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 Capybara.ignore_hidden_elements = false
 
 include FactoryBot::Syntax::Methods
+
+After do
+  Warden.test_reset!
+end
+
+Warden.test_mode!
+World Warden::Test::Helpers
