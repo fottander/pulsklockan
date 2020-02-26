@@ -1,0 +1,11 @@
+<div class='container-main'>
+  <h3>Add or edit brands on this page</h3>
+  <%= link_to 'Add brand', new_brand_path, class: 'add-button' %>
+  <div class="item-container">
+    <% @brands.each do |brand| %>
+      <%= brand.id %>
+      <%= brand.name %>
+      <br>
+    <% end %>
+  </div>
+</div>
