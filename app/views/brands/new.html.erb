@@ -1,6 +1,6 @@
 <div class='container-main'>
   <h3>Add brands</h3>
-  <div class='simple-form'>
+  <div class='standard-form'>
     <%= form_for @brand do |f| %>
       <% if @brand.errors.any? %>
         <% @brand.errors.full_messages.each do |message| %>
@@ -15,5 +15,7 @@
       <%= f.text_area :extra_info, rows: 5, style: 'width: 100%' %>
       <%= f.submit 'Add', class: 'add-button' %>
     <% end %>
+    <br>
+    <%= link_to 'Cancel', brands_path, class: 'cancel-button' %>
   </div>
 </div>
