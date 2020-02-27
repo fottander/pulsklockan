@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   root controller: :index, action: :index
 
-  resources :categories, only: [:show]
+  resources :categories, only: [:show, :new, :create, :edit, :update, :index]
 
   resources :brands, only: [:show, :new, :create, :edit, :update, :index]
 

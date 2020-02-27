@@ -1,0 +1,19 @@
+<div class='container-main'>
+  <h3>Add categories</h3>
+  <div class='standard-form'>
+    <%= form_for @category do |f| %>
+      <% if @category.errors.any? %>
+        <% @category.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      <% end %>
+      <%= f.label :name, 'Name', class: 'form-text' %>
+      <%= f.text_field :name %><br>
+      <%= f.label :description, 'Description', class: 'form-text' %>
+      <%= f.text_area :description, rows: 5, style: 'width: 100%' %>
+      <%= f.submit 'Add', class: 'add-button' %>
+    <% end %>
+    <br>
+    <%= link_to 'Cancel', categories_path, class: 'cancel-button' %>
+  </div>
+</div>

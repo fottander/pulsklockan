@@ -5,8 +5,8 @@ Feature: Homepage
       | id | name        |
       | 1  | Pulsklockor |
     Given the following brands exists
-      | id | name        |
-      | 1  | Garmin      |
+      | id | name        | description    |
+      | 1  | Garmin      | Denna Garmin.. |
     Given the following products exists
       | id | name                  | brand_id |
       | 1  | Garmin Forerunner 235 | 1        |
