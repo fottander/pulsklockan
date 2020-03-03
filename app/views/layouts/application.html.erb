@@ -33,8 +33,20 @@
         <a href="/categories/197">Smarta klockor</a>
         <a href="/categories/196">Pulsmätare</a>
         <a href="/categories/195">Bäst i test</a>
+        <% if admin_signed_in? %>
+          <%= link_to "Log out", destroy_admin_session_path, {method: :delete} %>
+        <% end %>
       </div>
     </div>
+    <% if notice %>
+      <div id="notice-wrapper" >
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% elsif alert %>
+      <div id='alert-wrapper' >
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
     <%= yield %>
     <div class='footer'>
       <div class='footer-grid'>
