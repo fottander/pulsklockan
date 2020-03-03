@@ -20,3 +20,7 @@ Given("I am logged in as admin {string}") do |email|
   admin = Admin.find_by(email: email)
   login_as(admin, scope: :admin)
 end
+
+Then(/^I select "([^"]*)" from "([^"]*)"$/) do |option, choices|
+  select option, from: choices
+end

@@ -24,21 +24,21 @@ class CategoriesController < ApplicationController
         format.json { render json: @category.errors, status: :unprocessable_entity }
       end
     end
+  end
 
-    def edit
-      @category = Category.find(params[:id])
-    end
+  def edit
+    @category = Category.find(params[:id])
+  end
 
-    def update
-      @category = Category.find(params[:id])
-      respond_to do |format|
-        if @category.update category_params
-          format.html { redirect_to edit_category_path(@category), notice: 'Category edited!' }
-          format.json { render :show, status: :ok, location: @category }
-        else
-          format.html { render :edit }
-          format.json { render json: @category.errors, status: :unprocessable_entity }
-        end
+  def update
+    @category = Category.find(params[:id])
+    respond_to do |format|
+      if @category.update category_params
+        format.html { redirect_to edit_category_path(@category), notice: 'Category edited!' }
+        format.json { render :show, status: :ok, location: @category }
+      else
+        format.html { render :edit }
+        format.json { render json: @category.errors, status: :unprocessable_entity }
       end
     end
   end

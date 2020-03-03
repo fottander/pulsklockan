@@ -25,6 +25,7 @@ class BrandsController < ApplicationController
         format.json { render json: @brand.errors, status: :unprocessable_entity }
       end
     end
+  end
 
   def edit
     @brand = Brand.find(params[:id])
@@ -42,7 +43,6 @@ class BrandsController < ApplicationController
       end
     end
   end
-end
 
   private
 
