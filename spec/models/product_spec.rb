@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
+
+  before(:all) do
+    Brand.destroy_all
+    create(:brand, name: 'Garmin', description: 'Garmin är ..', extra_info: 'Det är ett..', id: 199)
+  end
+
   describe 'DB table' do
     it { is_expected.to have_db_column :name }
     it { is_expected.to have_db_column(:price).of_type(:float) }
@@ -19,7 +25,12 @@ RSpec.describe Product, type: :model do
 
   describe 'Factory' do
     it 'should have valid Factory' do
-      expect(create(:category)).to be_valid
+      expect(create(:product, brand_id: 199)).to be_valid
     end
   end
+
+  after(:all) do
+    Brand.destroy_all
+  end
+
 end

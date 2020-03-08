@@ -18,7 +18,7 @@ RSpec.describe Brand, type: :model do
 
   describe 'Factory' do
     it 'should have valid Factory' do
-      expect(create(:category)).to be_valid
+      expect(create(:brand)).to be_valid
     end
   end
 end
