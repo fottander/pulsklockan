@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_124856) do
+ActiveRecord::Schema.define(version: 2020_03_28_111614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,13 @@ ActiveRecord::Schema.define(version: 2020_03_03_124856) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
+    t.bigint "primary_category_id"
+    t.bigint "secondary_category_id"
+    t.bigint "third_category_id"
     t.index ["brand_id"], name: "index_products_on_brand_id"
+    t.index ["primary_category_id"], name: "index_products_on_primary_category_id"
+    t.index ["secondary_category_id"], name: "index_products_on_secondary_category_id"
+    t.index ["third_category_id"], name: "index_products_on_third_category_id"
   end
 
   add_foreign_key "products", "brands"

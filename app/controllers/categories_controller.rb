@@ -3,6 +3,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    @products = Product.where("primary_category_id = ? OR secondary_category_id = ? OR third_category_id = ?", params[:id], params[:id], params[:id])
   end
 
   def index

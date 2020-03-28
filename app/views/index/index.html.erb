@@ -7,11 +7,11 @@
       <% end %>
       <br />
       <% @brands.each do |brand| %>
-        Kategori: <%= link_to "Alla #{brand.name}", brand_path(brand) %> Id: <%= brand.id %><br />
+        Märke: <%= link_to "Alla #{brand.name}", brand_path(brand) %> Id: <%= brand.id %><br />
       <% end %>
       <br />
       <% @products.each do |product| %>
-        Kategori: <%= link_to "Alla #{product.name}", product_path(product) %> Id: <%= product.id %><br />
+        Produkt: <%= link_to "Alla #{product.name}", product_path(product) %> Id: <%= product.id %><br />
       <% end %>
     </div>
     <div class='header-right'>
