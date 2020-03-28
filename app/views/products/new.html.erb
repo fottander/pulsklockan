@@ -14,7 +14,14 @@
       <%= f.label :price, 'Price', class: 'form-text' %>
       <%= f.text_field :price %><br>
       <%= f.label :brand_id, 'Brand', class: 'form-text' %>
-      <%= f.collection_select(:brand_id, Brand.all, :id, :name, { prompt: 'Choose brand' }, { class: 'input-medium' }) %>
+      <%= f.collection_select(:brand_id, Brand.all, :id, :name, { prompt: 'Choose brand' }, { class: 'input-medium' }) %><br>
+      <%= f.label :primary_category_id, 'Primary category', class: 'form-text' %>
+      <%= f.collection_select(:primary_category_id, Category.all, :id, :name, { prompt: 'Choose primary category' }, { class: 'input-medium' }) %><br>
+      <%= f.label :secondary_category_id, 'Secondary category', class: 'form-text' %>
+      <%= f.collection_select(:secondary_category_id, Category.all, :id, :name, { prompt: 'Choose secondary category' }, { class: 'input-medium' }) %><br>
+      <%= f.label :third_category_id, 'Third category', class: 'form-text' %>
+      <%= f.collection_select(:third_category_id, Category.all, :id, :name, { prompt: 'Choose third category' }, { class: 'input-medium' }) %><br>
+
       <%= f.submit 'Add', class: 'add-button' %>
     <% end %>
     <br>

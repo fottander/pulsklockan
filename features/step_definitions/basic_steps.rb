@@ -6,6 +6,11 @@ Then(/^I should see "([^"]*)"$/) do |content|
   expect(page).to have_content content
 end
 
+Then(/^I should not see "([^"]*)"$/) do |content|
+  expect(page).not_to have_content content
+end
+
+
 Given("I click {string}") do |button|
   click_link_or_button button
 end
