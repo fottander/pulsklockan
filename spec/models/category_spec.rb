@@ -12,7 +12,6 @@ RSpec.describe Category, type: :model do
   end
 
   describe 'Associations' do
-    it { is_expected.to have_many :products }
   end
 
   describe 'Factory' do
