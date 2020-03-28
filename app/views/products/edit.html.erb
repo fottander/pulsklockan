@@ -19,7 +19,7 @@
       <%= f.collection_select(:primary_category_id, Category.all, :id, :name, { include_blank: true, selected: @product.primary_category_id }, { class: 'input-medium' }) %><br>
       <%= f.label :secondary_category_id, 'Secondary Category', class: 'form-text' %>
       <%= f.collection_select(:secondary_category_id, Category.all, :id, :name, { include_blank: true, selected: @product.secondary_category_id }, { class: 'input-medium' }) %><br>
-      <%= f.label :third_category_id, 'Third Category', class: 'form-text' %>
+      <%= f.label :third_category_id, 'Third Category(bäst i test)', class: 'form-text' %>
       <%= f.collection_select(:third_category_id, Category.all, :id, :name, { include_blank: true, selected: @product.third_category_id }, { class: 'input-medium' }) %><br>
 
       <%= f.submit 'Edit', class: 'add-button' %>
