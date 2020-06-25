@@ -20,5 +20,6 @@ class AddColumnsToProducts < ActiveRecord::Migration[6.0]
     add_column :products, :apps, :text
     add_column :products, :sleep_tracking, :text
     add_column :products, :fitness_features, :text
+    add_column :products, :external_link, :text
   end
 end

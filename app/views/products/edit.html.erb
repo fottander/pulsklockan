@@ -13,6 +13,8 @@
       <%= f.text_area :description, rows: 5, style: 'width: 100%', value: @product.description %>
       <%= f.label :price, 'Price', class: 'form-text' %>
       <%= f.text_field :price, value: @product.price %><br>
+      <%= f.label :external_link, 'Länk', class: 'form-text' %>
+      <%= f.text_field :external_link, value: @product.external_link %><br>
       <%= f.label :brand_id, 'Brand', class: 'form-text' %>
       <%= f.collection_select(:brand_id, Brand.all, :id, :name, { include_blank: true, selected: @product.brand_id }, { class: 'input-medium' }) %><br>
       <%= f.label :primary_category_id, 'Primary Category', class: 'form-text' %>

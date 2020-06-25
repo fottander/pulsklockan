@@ -73,6 +73,7 @@ Product.create(
   id: 199,
   name: "Garmin Forerunner 235",
   price: 1.5,
+  external_link: "https://www.blabla234.se",
   description: "Garmin Forerunner 235 är en...",
   brand_id: 199
 )
@@ -81,6 +82,7 @@ Product.create(
   id: 198,
   name: "Apple series 5",
   price: 10.5,
+  external_link: "https://www.blabla234.se",
   description: "Apple series 5 är en...",
   brand_id: 197
 )

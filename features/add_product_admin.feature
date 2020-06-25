@@ -27,6 +27,7 @@ Feature: Add product admin
     And I fill in "Name" with "Garmin 235"
     And I fill in "Description" with "Garmin 235 finns i många varianter"
     And I fill in "Price" with "235"
+    And I fill in "Länk" with "https://blabla2345.se"
     And I select "Garmin" from "Brand"
     And I select "Pulsklockor" from "Primary category"
     And I select "Aktivitetsarmband" from "Secondary category"

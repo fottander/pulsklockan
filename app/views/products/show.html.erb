@@ -1,5 +1,7 @@
 <div class='container-main'>
   <h1><%= @product.name %></h1>
   <p>hello <%= @product.name %></p>
-  Märke: <%= @product.brand.name %>
+  Märke: <%= @product.brand.name %><br>
+  Pris: <%= @product.price %><br>
+  <%= link_to "Köp här", "#{@product.external_link}" %>
 </div>
