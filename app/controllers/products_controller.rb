@@ -46,6 +46,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :brand_id, :primary_category_id, :secondary_category_id, :third_category_id)
+    params.require(:product).permit(:name, :description, :price, :brand_id, :primary_category_id, :secondary_category_id, :third_category_id, :dimension, :battery, :weight, :display, :water_res, :memory, :gps, :bluetooth, :wi_fi, :os_system, :nfc, :heart_rate, :touch_screen, :voice_control, :phone_call, :offline_music, :apps, :sleep_tracking, :fitness_features)
   end
 end
