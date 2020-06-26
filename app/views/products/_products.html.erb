@@ -1,0 +1,14 @@
+<% @products.each do |product| %>
+  <% cache product do %>
+    <div class='product-<%= product.id %>'>
+      <div class='product-card'>
+        <div class='card-header'>
+          <%= link_to "#{product.name}", product_path(product) %><br>
+        </div>
+        <div class='card-image'>
+        </div>
+        <%= product.price %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

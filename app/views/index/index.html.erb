@@ -1,23 +1,21 @@
-<div class='container-main'>
-  <div class='header-main'>
-    <div class='header-left'>
-      <h1>Alla pulsklockor, aktivitetsarmband och smartklockor på ett och samma ställe</h1>
-      <% @categories.each do |category| %>
-        Kategori: <%= link_to "Alla #{category.name}", category_path(category) %> Id: <%= category.id %> <br>
-      <% end %>
-      <br />
-      <% @brands.each do |brand| %>
-        Märke: <%= link_to "Alla #{brand.name}", brand_path(brand) %> Id: <%= brand.id %><br />
-      <% end %>
-      <br />
-      <% @products.each do |product| %>
-        Produkt: <%= link_to "Alla #{product.name}", product_path(product) %> Id: <%= product.id %><br />
-      <% end %>
-    </div>
-    <div class='header-right'>
-      <%= image_tag 'pulsklocka1.png', alt: 'Pulsklocka', class: 'header-img1' %>
-      <%= image_tag 'aktivitetsarmband1.png', alt: 'Aktivitetsarmband', class: 'header-img2' %>
-      <%= image_tag 'smartklocka1.png', alt: 'Smartklocka', class: 'header-img3' %>
-    </div>
+<div class='header-main'>
+  <div class='header-left'>
+    <h1>Alla pulsklockor, aktivitetsarmband och smartklockor på ett och samma ställe</h1>
+    <% @categories.each do |category| %>
+      Kategori: <%= link_to "Alla #{category.name}", category_path(category) %> Id: <%= category.id %> <br>
+    <% end %>
+    <br />
+    <% @brands.each do |brand| %>
+      Märke: <%= link_to "Alla #{brand.name}", brand_path(brand) %> Id: <%= brand.id %><br />
+    <% end %>
+    <br />
+    <% @products.each do |product| %>
+      Produkt: <%= link_to "Alla #{product.name}", product_path(product) %> Id: <%= product.id %><br />
+    <% end %>
+  </div>
+  <div class='header-right'>
+    <%= image_tag 'pulsklocka1.png', alt: 'Pulsklocka', class: 'header-img1' %>
+    <%= image_tag 'aktivitetsarmband1.png', alt: 'Aktivitetsarmband', class: 'header-img2' %>
+    <%= image_tag 'smartklocka1.png', alt: 'Smartklocka', class: 'header-img3' %>
   </div>
 </div>

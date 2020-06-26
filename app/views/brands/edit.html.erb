@@ -1,21 +1,19 @@
-<div class='container-main'>
-  <h3>Edit brands</h3>
-  <div class='standard-form'>
-    <%= form_for @brand do |f| %>
-      <% if @brand.errors.any? %>
-        <% @brand.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
+<h3>Edit brands</h3>
+<div class='standard-form'>
+  <%= form_for @brand do |f| %>
+    <% if @brand.errors.any? %>
+      <% @brand.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
-      <%= f.label :name, 'Name', class: 'form-text' %>
-      <%= f.text_field :name, value: @brand.name %><br>
-      <%= f.label :description, 'Description', class: 'form-text' %>
-      <%= f.text_area :description, rows: 5, style: 'width: 100%', value: @brand.description %>
-      <%= f.label :extra_info, 'Extra info', class: 'form-text' %>
-      <%= f.text_area :extra_info, rows: 5, style: 'width: 100%', value: @brand.extra_info %>
-      <%= f.submit 'Edit', class: 'add-button' %>
     <% end %>
-    <br>
-    <%= link_to 'Cancel', brands_path, class: 'cancel-button' %>
-  </div>
+    <%= f.label :name, 'Name', class: 'form-text' %>
+    <%= f.text_field :name, value: @brand.name %><br>
+    <%= f.label :description, 'Description', class: 'form-text' %>
+    <%= f.text_area :description, rows: 5, style: 'width: 100%', value: @brand.description %>
+    <%= f.label :extra_info, 'Extra info', class: 'form-text' %>
+    <%= f.text_area :extra_info, rows: 5, style: 'width: 100%', value: @brand.extra_info %>
+    <%= f.submit 'Edit', class: 'add-button' %>
+  <% end %>
+  <br>
+  <%= link_to 'Cancel', brands_path, class: 'cancel-button' %>
 </div>

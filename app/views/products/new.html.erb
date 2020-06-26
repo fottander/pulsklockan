@@ -1,70 +1,68 @@
-<div class='container-main'>
-  <h3>Add products</h3>
-  <div class='standard-form'>
-    <%= form_for @product do |f| %>
-      <% if @product.errors.any? %>
-        <% @product.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
+<h3>Add products</h3>
+<div class='standard-form'>
+  <%= form_for @product do |f| %>
+    <% if @product.errors.any? %>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
-      <%= f.label :name, 'Name', class: 'form-text' %>
-      <%= f.text_field :name %><br>
-      <%= f.label :description, 'Description', class: 'form-text' %>
-      <%= f.text_area :description, rows: 5, style: 'width: 100%' %>
-      <%= f.label :price, 'Price', class: 'form-text' %>
-      <%= f.text_field :price %><br>
-      <%= f.label :external_link, 'Länk', class: 'form-text' %>
-      <%= f.text_field :external_link %><br>
-      <%= f.label :brand_id, 'Brand', class: 'form-text' %>
-      <%= f.collection_select(:brand_id, Brand.all, :id, :name, { prompt: 'Choose brand' }, { class: 'input-medium' }) %><br>
-      <%= f.label :primary_category_id, 'Primary category', class: 'form-text' %>
-      <%= f.collection_select(:primary_category_id, Category.all, :id, :name, { prompt: 'Choose primary category' }, { class: 'input-medium' }) %><br>
-      <%= f.label :secondary_category_id, 'Secondary category', class: 'form-text' %>
-      <%= f.collection_select(:secondary_category_id, Category.all, :id, :name, { prompt: 'Choose secondary category' }, { class: 'input-medium' }) %><br>
-      <%= f.label :third_category_id, 'Third category', class: 'form-text' %>
-      <%= f.collection_select(:third_category_id, Category.all, :id, :name, { prompt: 'Choose third category' }, { class: 'input-medium' }) %><br>
-      <%= f.label :dimension, 'Mått', class: 'form-text' %>
-      <%= f.text_field :dimension, style: 'width: 80%' %><br>
-      <%= f.label :battery, 'Batteri', class: 'form-text' %>
-      <%= f.text_field :battery, style: 'width: 80%' %><br>
-      <%= f.label :weight, 'Vikt', class: 'form-text' %>
-      <%= f.text_field :weight, style: 'width: 80%' %><br>
-      <%= f.label :display, 'Skärm', class: 'form-text' %>
-      <%= f.text_field :display, style: 'width: 80%' %><br>
-      <%= f.label :water_res, 'Vattentålig', class: 'form-text' %>
-      <%= f.text_field :water_res, style: 'width: 80%' %><br>
-      <%= f.label :memory, 'Lagring', class: 'form-text' %>
-      <%= f.text_field :memory, style: 'width: 80%' %><br>
-      <%= f.label :gps, 'Gps', class: 'form-text' %>
-      <%= f.text_field :gps, style: 'width: 80%' %><br>
-      <%= f.label :bluetooth, 'Bluetooth', class: 'form-text' %>
-      <%= f.text_field :bluetooth, style: 'width: 80%' %><br>
-      <%= f.label :wi_fi, 'Wi-Fi', class: 'form-text' %>
-      <%= f.text_field :wi_fi, style: 'width: 80%' %><br>
-      <%= f.label :os_system, 'Operativsystem', class: 'form-text' %>
-      <%= f.text_field :os_system, style: 'width: 80%' %><br>
-      <%= f.label :nfc, 'NFC', class: 'form-text' %>
-      <%= f.text_field :nfc, style: 'width: 80%' %><br>
-      <%= f.label :heart_rate, 'Pulsmätare', class: 'form-text' %>
-      <%= f.text_field :heart_rate, style: 'width: 80%' %><br>
-      <%= f.label :touch_screen, 'Pekskärm', class: 'form-text' %>
-      <%= f.text_field :touch_screen, style: 'width: 80%' %><br>
-      <%= f.label :voice_control, 'Röstkontroll', class: 'form-text' %>
-      <%= f.text_field :voice_control, style: 'width: 80%' %><br>
-      <%= f.label :phone_call, 'Telefonsamtal', class: 'form-text' %>
-      <%= f.text_field :phone_call, style: 'width: 80%' %><br>
-      <%= f.label :offline_music, 'Offline musik', class: 'form-text' %>
-      <%= f.text_field :offline_music, style: 'width: 80%' %><br>
-      <%= f.label :apps, 'Appar', class: 'form-text' %>
-      <%= f.text_field :apps, style: 'width: 80%' %><br>
-      <%= f.label :sleep_tracking, 'Sömn', class: 'form-text' %>
-      <%= f.text_field :sleep_tracking, style: 'width: 80%' %><br>
-      <%= f.label :fitness_features, 'Fitness', class: 'form-text' %>
-      <%= f.text_field :fitness_features, style: 'width: 80%' %><br>
-
-      <%= f.submit 'Add', class: 'add-button' %>
     <% end %>
-    <br>
-    <%= link_to 'Cancel', products_path, class: 'cancel-button' %>
-  </div>
+    <%= f.label :name, 'Name', class: 'form-text' %>
+    <%= f.text_field :name %><br>
+    <%= f.label :description, 'Description', class: 'form-text' %>
+    <%= f.text_area :description, rows: 5, style: 'width: 100%' %>
+    <%= f.label :price, 'Price', class: 'form-text' %>
+    <%= f.text_field :price %><br>
+    <%= f.label :external_link, 'Länk', class: 'form-text' %>
+    <%= f.text_field :external_link %><br>
+    <%= f.label :brand_id, 'Brand', class: 'form-text' %>
+    <%= f.collection_select(:brand_id, Brand.all, :id, :name, { prompt: 'Choose brand' }, { class: 'input-medium' }) %><br>
+    <%= f.label :primary_category_id, 'Primary category', class: 'form-text' %>
+    <%= f.collection_select(:primary_category_id, Category.all, :id, :name, { prompt: 'Choose primary category' }, { class: 'input-medium' }) %><br>
+    <%= f.label :secondary_category_id, 'Secondary category', class: 'form-text' %>
+    <%= f.collection_select(:secondary_category_id, Category.all, :id, :name, { prompt: 'Choose secondary category' }, { class: 'input-medium' }) %><br>
+    <%= f.label :third_category_id, 'Third category', class: 'form-text' %>
+    <%= f.collection_select(:third_category_id, Category.all, :id, :name, { prompt: 'Choose third category' }, { class: 'input-medium' }) %><br>
+    <%= f.label :dimension, 'Mått', class: 'form-text' %>
+    <%= f.text_field :dimension, style: 'width: 80%' %><br>
+    <%= f.label :battery, 'Batteri', class: 'form-text' %>
+    <%= f.text_field :battery, style: 'width: 80%' %><br>
+    <%= f.label :weight, 'Vikt', class: 'form-text' %>
+    <%= f.text_field :weight, style: 'width: 80%' %><br>
+    <%= f.label :display, 'Skärm', class: 'form-text' %>
+    <%= f.text_field :display, style: 'width: 80%' %><br>
+    <%= f.label :water_res, 'Vattentålig', class: 'form-text' %>
+    <%= f.text_field :water_res, style: 'width: 80%' %><br>
+    <%= f.label :memory, 'Lagring', class: 'form-text' %>
+    <%= f.text_field :memory, style: 'width: 80%' %><br>
+    <%= f.label :gps, 'Gps', class: 'form-text' %>
+    <%= f.text_field :gps, style: 'width: 80%' %><br>
+    <%= f.label :bluetooth, 'Bluetooth', class: 'form-text' %>
+    <%= f.text_field :bluetooth, style: 'width: 80%' %><br>
+    <%= f.label :wi_fi, 'Wi-Fi', class: 'form-text' %>
+    <%= f.text_field :wi_fi, style: 'width: 80%' %><br>
+    <%= f.label :os_system, 'Operativsystem', class: 'form-text' %>
+    <%= f.text_field :os_system, style: 'width: 80%' %><br>
+    <%= f.label :nfc, 'NFC', class: 'form-text' %>
+    <%= f.text_field :nfc, style: 'width: 80%' %><br>
+    <%= f.label :heart_rate, 'Pulsmätare', class: 'form-text' %>
+    <%= f.text_field :heart_rate, style: 'width: 80%' %><br>
+    <%= f.label :touch_screen, 'Pekskärm', class: 'form-text' %>
+    <%= f.text_field :touch_screen, style: 'width: 80%' %><br>
+    <%= f.label :voice_control, 'Röstkontroll', class: 'form-text' %>
+    <%= f.text_field :voice_control, style: 'width: 80%' %><br>
+    <%= f.label :phone_call, 'Telefonsamtal', class: 'form-text' %>
+    <%= f.text_field :phone_call, style: 'width: 80%' %><br>
+    <%= f.label :offline_music, 'Offline musik', class: 'form-text' %>
+    <%= f.text_field :offline_music, style: 'width: 80%' %><br>
+    <%= f.label :apps, 'Appar', class: 'form-text' %>
+    <%= f.text_field :apps, style: 'width: 80%' %><br>
+    <%= f.label :sleep_tracking, 'Sömn', class: 'form-text' %>
+    <%= f.text_field :sleep_tracking, style: 'width: 80%' %><br>
+    <%= f.label :fitness_features, 'Fitness', class: 'form-text' %>
+    <%= f.text_field :fitness_features, style: 'width: 80%' %><br>
+
+    <%= f.submit 'Add', class: 'add-button' %>
+  <% end %>
+  <br>
+  <%= link_to 'Cancel', products_path, class: 'cancel-button' %>
 </div>
