@@ -5,4 +5,5 @@ class Product < ApplicationRecord
   belongs_to :primary_category, class_name: 'Category', optional: true
   belongs_to :secondary_category, class_name: 'Category', optional: true
   belongs_to :third_category, class_name: 'Category', optional: true
+  has_one_attached :avatar
 end
