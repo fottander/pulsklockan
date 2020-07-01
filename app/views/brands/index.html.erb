@@ -1,13 +1,11 @@
-<div class='container-main'>
-  <h3>Add or edit brands on this page</h3>
-  <%= link_to 'Add brand', new_brand_path, class: 'add-button' %>
-  <div class="item-container">
-    <% @brands.each do |brand| %>
-      <div class='item-box'>
-        <%= brand.id %>
-        <%= brand.name %>
-        <%= link_to 'Edit', edit_brand_path(brand), class: 'reply-button' %>
-      </div>
-    <% end %>
-  </div>
+<h3>Add or edit brands on this page</h3>
+<%= link_to 'Add brand', new_brand_path, class: 'add-button' %>
+<div class="item-container">
+  <% @brands.each do |brand| %>
+    <div class='item-box'>
+      <%= brand.id %>
+      <%= brand.name %>
+      <%= link_to 'Edit', edit_brand_path(brand), class: 'reply-button' %>
+    </div>
+  <% end %>
 </div>

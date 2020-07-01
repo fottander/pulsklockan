@@ -1,13 +1,11 @@
-<div class='container-main'>
-  <h3>Add or edit products on this page</h3>
-  <%= link_to 'Add product', new_product_path, class: 'add-button' %>
-  <div class="item-container">
-    <% @products.each do |product| %>
-      <div class='item-box'>
-        <%= product.id %>
-        <%= product.name %>
-        <%= link_to 'Edit', edit_product_path(product), class: 'reply-button' %>
-      </div>
-    <% end %>
-  </div>
+<h3>Add or edit products on this page</h3>
+<%= link_to 'Add product', new_product_path, class: 'add-button' %>
+<div class="item-container">
+  <% @products.each do |product| %>
+    <div class='item-box'>
+      <%= product.id %>
+      <%= product.name %>
+      <%= link_to 'Edit', edit_product_path(product), class: 'reply-button' %>
+    </div>
+  <% end %>
 </div>

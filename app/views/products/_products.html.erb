@@ -1,0 +1,15 @@
+<% @products.each do |product| %>
+  <% cache product do %>
+    <div id='product-<%= product.id %>'>
+      <div class='product-card'>
+        <div class='card-header'>
+          <%= link_to "#{product.name}", product_path(product) %><br>
+        </div>
+        <div class='card-image'>
+          <%= image_tag 'pulsklocka1.png', alt: 'Pulsklocka', class: 'header-img1' %>
+        </div>
+        <%= product.price %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

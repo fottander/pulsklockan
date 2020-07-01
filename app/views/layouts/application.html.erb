@@ -23,7 +23,7 @@
         <label for="nav-check">
           <span></span>
           <span></span>
-          <span></span>
+          <div class='menu'>Meny</div>
         </label>
       </div>
 
@@ -48,7 +48,9 @@
         <p class="alert"><%= alert %></p>
       </div>
     <% end %>
-    <%= yield %>
+    <div class='container-main'>
+      <%= yield %>
+    </div>
     <div class='footer'>
       <div class='footer-grid'>
         <div class='footer-container'>

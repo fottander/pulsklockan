@@ -1,7 +1,5 @@
-<div class='container-main'>
-  <h1>Här nedan hittar du alla <%= @brand.name %> produkter</h1>
-  <p>hello <%= @brand.name %></p>
-  <% @products.each do |product| %>
-    <%= link_to "#{product.name}", product_path(product) %>
-  <% end %>
+<h1>Här nedan hittar du alla <%= @brand.name %> produkter</h1>
+<p>hello <%= @brand.name %></p>
+<div class='products-container'>
+  <%= render 'products/products' %>
 </div>
