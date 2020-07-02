@@ -12,6 +12,10 @@
     <%= f.text_area :description, rows: 5, style: 'width: 100%', value: @brand.description %>
     <%= f.label :extra_info, 'Extra info', class: 'form-text' %>
     <%= f.text_area :extra_info, rows: 5, style: 'width: 100%', value: @brand.extra_info %>
+    <%= f.label :avatar, 'Bild', class: 'form-text' %>
+    <%= f.file_field :avatar, value: @brand.avatar %><br>
+    <%= image_tag(@brand.avatar, width: 200) if @brand.avatar.present? %><br>
+
     <%= f.submit 'Edit', class: 'add-button' %>
   <% end %>
   <br>

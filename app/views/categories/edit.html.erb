@@ -10,6 +10,10 @@
     <%= f.text_field :name, value: @category.name %><br>
     <%= f.label :description, 'Description', class: 'form-text' %>
     <%= f.text_area :description, rows: 5, style: 'width: 100%', value: @category.description %>
+    <%= f.label :avatar, 'Bild', class: 'form-text' %>
+    <%= f.file_field :avatar, value: @category.avatar %><br>
+    <%= image_tag(@category.avatar, width: 200) if @category.avatar.present? %><br>
+
     <%= f.submit 'Edit', class: 'add-button' %>
   <% end %>
   <br>

@@ -44,9 +44,20 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @category = Category.find(params[:id])
+    if @category.destroy
+      flash[:notice] = "Category deleted"
+      redirect_back(fallback_location: root_path)
+    else
+      flash[:alert] = "Något gick fel"
+      redirect_back(fallback_location: root_path)
+    end
+  end
+
   private
 
   def category_params
-    params.require(:category).permit(:name, :description)
+    params.require(:category).permit(:name, :description, :avatar)
   end
 end

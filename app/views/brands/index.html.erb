@@ -5,7 +5,7 @@
     <div class='item-box'>
       <%= brand.id %>
       <%= brand.name %>
-      <%= link_to 'Edit', edit_brand_path(brand), class: 'reply-button' %>
+      <%= link_to 'Edit', edit_brand_path(brand), class: 'reply-button' %><%= link_to 'Delete', brand_path(brand), data: { confirm: 'Are you sure?' }, method: :delete, class: 'add-button' %>
     </div>
   <% end %>
 </div>
