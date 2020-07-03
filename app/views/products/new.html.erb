@@ -60,6 +60,9 @@
     <%= f.text_field :sleep_tracking, style: 'width: 80%' %><br>
     <%= f.label :fitness_features, 'Fitness', class: 'form-text' %>
     <%= f.text_field :fitness_features, style: 'width: 80%' %><br>
+    <%= f.label :avatar, 'Bild', class: 'form-text' %>
+    <%= f.file_field :avatar, style: 'width: 80%' %><br>
+    <%= image_tag(@product.avatar, width: 200) if @product.avatar.attached? %><br>
 
     <%= f.submit 'Add', class: 'add-button' %>
   <% end %>

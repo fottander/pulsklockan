@@ -3,7 +3,7 @@ class BrandsController < ApplicationController
 
   def show
     @brand = Brand.find(params[:id])
-    @products = @brand.products
+    @products = @brand.products.with_attached_avatar
   end
 
   def index
@@ -44,9 +44,20 @@ class BrandsController < ApplicationController
     end
   end
 
+  def destroy
+    @brand = Brand.find(params[:id])
+    if @brand.destroy
+      flash[:notice] = "Brand deleted"
+      redirect_back(fallback_location: root_path)
+    else
+      flash[:alert] = "Något gick fel"
+      redirect_back(fallback_location: root_path)
+    end
+  end
+
   private
 
   def brand_params
-    params.require(:brand).permit(:name, :description, :extra_info)
+    params.require(:brand).permit(:name, :description, :extra_info, :avatar)
   end
 end

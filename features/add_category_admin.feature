@@ -20,6 +20,7 @@ Feature: Add category admin
     And I should see "Pulsklockor"
     And I click "Edit"
     And I fill in "Name" with "Aktivitetsarmband"
+    And I attach category file
     And I click "Edit"
     Then I should see "Category edited"
     And I click "Cancel"

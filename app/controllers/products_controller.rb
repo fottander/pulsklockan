@@ -43,6 +43,17 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    if @product.destroy
+      flash[:notice] = "Product deleted"
+      redirect_back(fallback_location: root_path)
+    else
+      flash[:alert] = "Något gick fel"
+      redirect_back(fallback_location: root_path)
+    end
+  end
+
   private
 
   def product_params

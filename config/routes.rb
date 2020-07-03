@@ -12,9 +12,9 @@ Rails.application.routes.draw do
 
   root controller: :index, action: :index
 
-  resources :categories, only: [:show, :new, :create, :edit, :update, :index]
+  resources :categories, only: [:show, :new, :create, :edit, :update, :index, :destroy]
 
-  resources :brands, only: [:show, :new, :create, :edit, :update, :index]
+  resources :brands, only: [:show, :new, :create, :edit, :update, :index, :destroy]
 
-  resources :products, only: [:show, :new, :create, :edit, :update, :index]
+  resources :products, only: [:show, :new, :create, :edit, :update, :index, :destroy]
 end

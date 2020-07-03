@@ -1,5 +1,7 @@
 require 'cucumber/rails'
 require 'factory_bot'
+require 'database_cleaner'
+require 'database_cleaner/cucumber'
 
 ActionController::Base.allow_rescue = false
 
@@ -14,6 +16,14 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 Capybara.ignore_hidden_elements = false
 
 include FactoryBot::Syntax::Methods
+
+Before do
+  DatabaseCleaner.start
+end
+
+After do |scenario|
+  DatabaseCleaner.clean
+end
 
 After do
   Warden.test_reset!
