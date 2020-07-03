@@ -62,7 +62,7 @@
     <%= f.text_field :fitness_features, value: @product.fitness_features %><br>
     <%= f.label :avatar, 'Bild', class: 'form-text' %>
     <%= f.file_field :avatar, value: @product.avatar %><br>
-    <%= image_tag(@product.avatar, width: 200) if @product.avatar.present? %><br>
+    <%= image_tag(@product.avatar, width: 200) if @product.avatar.attached? %><br>
 
     <%= f.submit 'Edit', class: 'add-button' %>
   <% end %>

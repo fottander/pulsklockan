@@ -39,6 +39,7 @@ Feature: Add product admin
     And I click "Edit"
     And I fill in "Name" with "Garmin 600"
     And I fill in "Price" with "55.5"
+    And I attach file
     And I click "Edit"
     Then I should see "Product edited"
     And I click "Cancel"

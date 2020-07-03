@@ -21,6 +21,7 @@ Feature: Add brand admin
     And I should see "Garmin"
     And I click "Edit"
     And I fill in "Name" with "Apple"
+    And I attach brand file
     And I click "Edit"
     Then I should see "Brand edited"
     And I click "Cancel"

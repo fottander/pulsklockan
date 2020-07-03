@@ -24,3 +24,15 @@ end
 Then(/^I select "([^"]*)" from "([^"]*)"$/) do |option, choices|
   select option, from: choices
 end
+
+Then(/^I attach file$/) do
+  attach_file('product[avatar]', "#{Rails.root}/spec/images/hello.jpeg", visible: false)
+end
+
+Then(/^I attach brand file$/) do
+  attach_file('brand[avatar]', "#{Rails.root}/spec/images/hello.jpeg", visible: false)
+end
+
+Then(/^I attach category file$/) do
+  attach_file('category[avatar]', "#{Rails.root}/spec/images/hello.jpeg", visible: false)
+end
