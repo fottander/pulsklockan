@@ -8,12 +8,6 @@
     <% end %>
     <%= f.label :name, 'Name', class: 'form-text' %>
     <%= f.text_field :name %><br>
-    <%= f.label :description, 'Description', class: 'form-text' %>
-    <%= f.text_area :description, rows: 5, style: 'width: 100%' %>
-    <%= f.label :price, 'Price', class: 'form-text' %>
-    <%= f.text_field :price %><br>
-    <%= f.label :external_link, 'Länk', class: 'form-text' %>
-    <%= f.text_field :external_link %><br>
     <%= f.label :brand_id, 'Brand', class: 'form-text' %>
     <%= f.collection_select(:brand_id, Brand.all, :id, :name, { prompt: 'Choose brand' }, { class: 'input-medium' }) %><br>
     <%= f.label :primary_category_id, 'Primary category', class: 'form-text' %>
@@ -63,6 +57,19 @@
     <%= f.label :avatar, 'Bild', class: 'form-text' %>
     <%= f.file_field :avatar, style: 'width: 80%' %><br>
     <%= image_tag(@product.avatar, width: 200) if @product.avatar.attached? %><br>
+
+    <%= f.label :store_1_name, 'Butik Netonnet namn', class: 'form-text' %>
+    <%= f.select :store_1_name, options_for_select(Product::STORE_OPTIONS), prompt: '-- Välj --', class: 'form-text' %>
+    <%= f.label :store_1_link, 'Butik Netonnet länk', class: 'form-text' %>
+    <%= f.text_field :store_1_link %><br>
+    <%= f.label :store_2_name, 'Butik Sportamore namn', class: 'form-text' %>
+    <%= f.text_field :store_2_name %><br>
+    <%= f.label :store_2_link, 'Butik Sportamore länk', class: 'form-text' %>
+    <%= f.text_field :store_2_link %><br>
+    <%= f.label :store_3_name, 'Butik Cdon namn', class: 'form-text' %>
+    <%= f.text_field :store_3_name %><br>
+    <%= f.label :store_3_link, 'Butik Cdon länk', class: 'form-text' %>
+    <%= f.text_field :store_3_link %><br>
 
     <%= f.submit 'Add', class: 'add-button' %>
   <% end %>

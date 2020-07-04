@@ -1,6 +1,5 @@
 class AddColumnsToProducts < ActiveRecord::Migration[6.0]
   def change
-    add_column :products, :description, :text
     add_column :products, :dimension, :text
     add_column :products, :battery, :text
     add_column :products, :weight, :text
@@ -20,6 +19,15 @@ class AddColumnsToProducts < ActiveRecord::Migration[6.0]
     add_column :products, :apps, :text
     add_column :products, :sleep_tracking, :text
     add_column :products, :fitness_features, :text
-    add_column :products, :external_link, :text
+    add_column :products, :store_1_name, :text
+    add_column :products, :store_1_link, :text
+    add_column :products, :store_1_price, :float
+    add_column :products, :store_2_name, :text
+    add_column :products, :store_2_link, :text
+    add_column :products, :store_2_price, :float
+    add_column :products, :store_3_name, :text
+    add_column :products, :store_3_link, :text
+    add_column :products, :store_3_price, :float
+    add_column :products, :active, :boolean, default: false
   end
 end

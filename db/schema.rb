@@ -70,11 +70,9 @@ ActiveRecord::Schema.define(version: 2020_07_01_180155) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
-    t.float "price"
     t.bigint "brand_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "description"
     t.text "dimension"
     t.text "battery"
     t.text "weight"
@@ -94,7 +92,16 @@ ActiveRecord::Schema.define(version: 2020_07_01_180155) do
     t.text "apps"
     t.text "sleep_tracking"
     t.text "fitness_features"
-    t.text "external_link"
+    t.text "store_1_name"
+    t.text "store_1_link"
+    t.float "store_1_price"
+    t.text "store_2_name"
+    t.text "store_2_link"
+    t.float "store_2_price"
+    t.text "store_3_name"
+    t.text "store_3_link"
+    t.float "store_3_price"
+    t.boolean "active", default: false
     t.bigint "primary_category_id"
     t.bigint "secondary_category_id"
     t.bigint "third_category_id"
