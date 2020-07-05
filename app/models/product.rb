@@ -16,6 +16,8 @@ class Product < ApplicationRecord
   before_update :scrape_product_price_2
   before_update :scrape_product_price_3
 
+  scope :active, -> { where active: true }
+
   STORE_OPTIONS = [ "NetOnNet", "Sportamore", "Cdon" ]
 
   private

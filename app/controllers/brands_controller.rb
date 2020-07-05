@@ -3,7 +3,7 @@ class BrandsController < ApplicationController
 
   def show
     @brand = Brand.find(params[:id])
-    @products = @brand.products.with_attached_avatar
+    @products = @brand.products.active.with_attached_avatar
   end
 
   def index
