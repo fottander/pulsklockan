@@ -38,6 +38,7 @@ Feature: Add product admin
     And I attach file
     And I select "NetOnNet" from "Butik Netonnet namn"
     And I fill in "Butik Netonnet länk" with "https://www.netonnet.se/art/telefoner/smartwatch/garminsmartwatch/garmin-vivomove-hr-black-rose-gold-sm/1009652.15387/"
+    And I check active box
     And I click "Edit"
     Then I should see "Product edited"
     And I click "Cancel"

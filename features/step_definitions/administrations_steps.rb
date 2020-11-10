@@ -36,3 +36,7 @@ end
 Then(/^I attach category file$/) do
   attach_file('category[avatar]', "#{Rails.root}/spec/images/hello.jpeg", visible: false)
 end
+
+Then("I check active box") do
+  check 'product_active'
+end
