@@ -1,13 +1,36 @@
-<h1><%= @product.name %></h1>
-<%= image_tag(@product.avatar, width: 200) if @product.avatar.attached? %><br>
-<%= @product.store_1_name %><%= @product.store_1_price %><%= link_to 'Till butik', "#{@product.store_1_link}" %><br>
-<% if @product.store_2_name? %>
-  <%= @product.store_2_name %><%= @product.store_2_price %><%= link_to 'Till butik', "#{@product.store_2_link}" %><br>
-<% end %>
-<% if @product.store_3_name? %>
-  <%= @product.store_3_name %><%= @product.store_3_price %><%= link_to 'Till butik', "#{@product.store_3_link}" %><br>
-<% end %>
-Märke: <%= @product.brand.name %><br>
+<div class=product-header>
+  <h1><%= @product.name %></h1>
+</div>
+<div class='product-holder'>
+  <div class='product-card-holder'>
+    <%= image_tag(@product.avatar) if @product.avatar.attached? %>
+  </div>
+  <div class='product-card-holder'>
+    <div class='product-compare-holder'>
+      <div class='compare-header'>
+        Prisjämförelse
+      </div>
+      <div class='compare-content'>
+        <div class='compare-name'>
+          <%= @product.store_1_name %>
+        </div>
+        <div class='compare-price'>
+          <%= @product.store_1_price %>
+        </div>
+        <div class='compare-link'>
+          <%= link_to 'Till butik', "#{@product.store_1_link}" %>
+        </div>
+      </div>
+    </div>
+    <% if @product.store_2_name? %>
+      <%= @product.store_2_name %><%= @product.store_2_price %><%= link_to 'Till butik', "#{@product.store_2_link}" %><br>
+    <% end %>
+    <% if @product.store_3_name? %>
+      <%= @product.store_3_name %><%= @product.store_3_price %><%= link_to 'Till butik', "#{@product.store_3_link}" %><br>
+    <% end %>
+  </div>
+</div>
+Märke: <%= link_to "#{@product.brand.name}", brand_path(@product.brand) %><br>
 Höjd: <%= @product.height %><br>
 Bredd: <%= @product.width %><br>
 Djup: <%= @product.depth %><br>
