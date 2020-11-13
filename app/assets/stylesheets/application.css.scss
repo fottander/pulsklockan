@@ -23,6 +23,7 @@ body {
   margin: 0px;
   font-family: 'Montserrat', sans-serif;
   font-size: 1em;
+  font-weight: 300;
 }
 
 /* NOTICE & ALERT */
@@ -442,6 +443,10 @@ transform: rotate(90deg);
 
 /* Product views */
 
+.product-header h1 {
+  font-weight: 400;
+}
+
 .product-holder {
   display: flex;
   flex-wrap: wrap;
@@ -461,6 +466,18 @@ transform: rotate(90deg);
   width: 300;
   background-color: white;
   padding: 1em 5em 1em 5em;
+}
+
+.product-card-holder .product-facts h4 {
+  letter-spacing: 1.1px;
+}
+
+.product-card-holder .product-facts .product-facts-holder {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
 }
 
 @media screen and (max-width: 39.9375em) {
@@ -511,4 +528,5 @@ transform: rotate(90deg);
   flex-direction: row;
   justify-content: space-between;
   padding: 1em 1em 1em 1em;
+  border-bottom: 1px solid #C9C9C9;
 }
