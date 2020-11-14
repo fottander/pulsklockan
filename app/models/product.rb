@@ -15,6 +15,7 @@ class Product < ApplicationRecord
   before_update :scrape_product_price_1
   before_update :scrape_product_price_2
   before_update :scrape_product_price_3
+  before_update :set_best_price
 
   scope :active, -> { where active: true }
 
@@ -52,6 +53,11 @@ class Product < ApplicationRecord
     else
       self.store_3_price = nil
     end
+  end
+
+  def set_best_price
+    arr = [store_1_price, store_2_price, store_3_price].compact
+    self.best_price = arr.min
   end
 
 end

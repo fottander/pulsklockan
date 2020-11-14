@@ -30,6 +30,8 @@ class AddColumnsToProducts < ActiveRecord::Migration[6.0]
     add_column :products, :cycling, :boolean
     add_column :products, :swimming, :boolean
 
+    add_column :products, :best_price, :float
+
     add_column :products, :store_1_name, :text
     add_column :products, :store_1_link, :text
     add_column :products, :store_1_price, :float

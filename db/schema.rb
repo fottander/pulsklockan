@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 2020_07_01_180155) do
     t.boolean "golf"
     t.boolean "cycling"
     t.boolean "swimming"
+    t.float "best_price"
     t.text "store_1_name"
     t.text "store_1_link"
     t.float "store_1_price"

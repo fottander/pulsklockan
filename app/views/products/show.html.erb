@@ -3,7 +3,7 @@
 </div>
 <div class='product-holder'>
   <div class='product-card-holder'>
-    <%= image_tag(@product.avatar) if @product.avatar.attached? %>
+    <%= image_tag(@product.avatar, alt: "#{@product.name}") if @product.avatar.attached? %>
   </div>
   <div class='product-card-holder'>
     <div class='product-compare-holder'>

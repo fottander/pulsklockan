@@ -1,5 +1,6 @@
-<h1>Här nedan hittar du alla <%= @category.try(:name) %></h1>
-<p>hello <%= @category.try(:name) %></p>
+<h1>Alla <%= @category.try(:name) %></h1>
+<p><%= @category.description %></p>
+<p>Just nu hittar du <%= @products.count %> av marknadens mest populära <span style='text-transform: lowercase;'><%= @category.name %></span>.</p>
 <%= image_tag(@category.avatar, width: 200) if @category.avatar.attached? %>
 <div class='products-container'>
   <%= render 'products/products' %>

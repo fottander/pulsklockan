@@ -1,14 +1,19 @@
 <% @products.each do |product| %>
   <% cache product do %>
     <div id='product-<%= product.id %>'>
+      <%= link_to product_path(product) do %>
       <div class='product-card'>
         <div class='card-header'>
-          <%= link_to "#{product.name}", product_path(product) %><br>
+          <div class='card-product-name'><%= product.name %></div>
         </div>
         <div class='card-image'>
-          <%= image_tag(product.avatar, width: 200) if product.avatar.attached? %>
+          <%= image_tag(product.avatar, alt: "#{product.name}") if product.avatar.attached? %>
+        </div>
+        <div class='card-content'>
+          <%= product.best_price %> kr
         </div>
       </div>
+      <% end %>
     </div>
   <% end %>
 <% end %>
