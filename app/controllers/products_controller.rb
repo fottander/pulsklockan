@@ -57,6 +57,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :brand_id, :primary_category_id, :secondary_category_id, :third_category_id, :height, :width, :depth, :weight, :battery, :battery_type, :display, :water_res, :memory, :gps, :bluetooth, :wi_fi, :os_system, :heart_rate, :apps, :sleep_tracking, :fitness_features, :barometer, :altimeter, :nfc, :touch_screen, :voice_control, :phone_call, :avatar, :store_1_name, :store_1_link, :store_1_price, :store_2_name, :store_2_link, :store_2_price, :store_3_name, :store_3_link, :store_3_price, :active)
+    params.require(:product).permit(:name, :brand_id, :primary_category_id, :secondary_category_id, :third_category_id, :height, :width, :depth, :weight, :battery, :touch_screen, :water_res, :memory, :os_compatible, :bluetooth, :wi_fi, :apps, :nfc, :voice_control, :phone_call, :music, :gps, :heart_rate, :barometer, :sleep_tracking, :calories, :steps, :oxygen, :golf, :cycling, :swimming, :store_1_name, :store_1_link, :store_1_price, :store_2_name, :store_2_link, :store_2_price, :store_3_name, :store_3_link, :store_3_price, :active, :avatar)
   end
 end

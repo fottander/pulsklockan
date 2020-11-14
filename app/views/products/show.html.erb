@@ -34,15 +34,7 @@
         </div>
         <div class='product-facts-holder'>
           <div class='facts-content'>
-            Operativsystem
-          </div>
-          <div class='facts-content'>
-            <%= @product.os_system %>
-          </div>
-        </div>
-        <div class='product-facts-holder'>
-          <div class='facts-content'>
-            Pulsmätare
+            Pulsmätning
           </div>
           <div class='facts-content'>
             <%= @product.heart_rate %>
@@ -56,6 +48,18 @@
             <%= @product.battery %>h
           </div>
         </div>
+        <div class='product-facts-holder'>
+          <div class='facts-content'>
+            Telefonsamtal
+          </div>
+          <div class='facts-content'>
+            <% if @product.phone_call == true %>
+              Ja
+            <% else %>
+              Nej
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
     <% if @product.store_2_name? %>
@@ -66,23 +70,273 @@
     <% end %>
   </div>
 </div>
-Höjd: <%= @product.height %><br>
-Bredd: <%= @product.width %><br>
-Djup: <%= @product.depth %><br>
-Vikt: <%= @product.weight %><br>
-Batterityp: <%= @product.battery_type %><br>
-Skärm: <%= @product.display %><br>
-Vattentålighet: <%= @product.water_res %><br>
-Lagring: <%= @product.memory %><br>
-Gps: <%= @product.gps %><br>
-Bluetooth: <%= @product.bluetooth %><br>
-Wi-Fi: <%= @product.wi_fi %><br>
-Appar: <%= @product.apps %><br>
-Sömn: <%= @product.sleep_tracking %><br>
-Fitness: <%= @product.fitness_features %><br>
-Barometer: <%= @product.barometer %><br>
-Höjdmätare: <%= @product.altimeter %><br>
-Nfc: <%= @product.nfc %><br>
-Pekskärm: <%= @product.touch_screen %><br>
-Röststyrning: <%= @product.voice_control %><br>
-Telefonsamtal: <%= @product.phone_call %><br>
+<div class='specs-holder'>
+  <div class='specs-container'>
+    <div class='specs-header'>
+      <h4>Allmänt</h4>
+    </div>
+    <div class='specs-table-white'>
+      <div class='specs-feature'>
+        Höjd
+      </div>
+      <div class='specs-amount'>
+        <%= @product.height %>
+      </div>
+    </div>
+    <div class='specs-table'>
+      <div class='specs-feature'>
+        Bredd
+      </div>
+      <div class='specs-amount'>
+        <%= @product.width %>
+      </div>
+    </div>
+    <div class='specs-table-white'>
+      <div class='specs-feature'>
+        Djup
+      </div>
+      <div class='specs-amount'>
+        <%= @product.depth %>
+      </div>
+    </div>
+    <div class='specs-table'>
+      <div class='specs-feature'>
+        Vikt
+      </div>
+      <div class='specs-amount'>
+        <%= @product.weight %>
+      </div>
+    </div>
+    <div class='specs-table-white'>
+      <div class='specs-feature'>
+        Display
+      </div>
+      <div class='specs-amount'>
+        <%= @product.display %>
+      </div>
+    </div>
+    <div class='specs-table'>
+      <div class='specs-feature'>
+        Pekskärm
+      </div>
+      <div class='specs-amount'>
+        <% if @product.touch_screen == true %>
+          Ja
+        <% else %>
+          Nej
+        <% end %>
+      </div>
+    </div>
+    <div class='specs-table-white'>
+      <div class='specs-feature'>
+        Vattentålig
+      </div>
+      <div class='specs-amount'>
+        <%= @product.water_res %>
+      </div>
+    </div>
+    <div class='specs-table'>
+      <div class='specs-feature'>
+        Minne
+      </div>
+      <div class='specs-amount'>
+        <%= @product.memory %>
+      </div>
+    </div>
+  </div>
+  <div class='specs-container'>
+    <div class='specs-header'>
+      <h4>Smarta funktioner</h4>
+    </div>
+    <div class='specs-table-white'>
+      <div class='specs-feature'>
+        Smartphone kompatibel
+      </div>
+      <div class='specs-amount'>
+        <%= @product.os_compatible %>
+      </div>
+    </div>
+    <div class='specs-table'>
+      <div class='specs-feature'>
+        Bluetooth
+      </div>
+      <div class='specs-amount'>
+        <% if @product.bluetooth == true %>
+          Ja
+        <% else %>
+          Nej
+        <% end %>
+      </div>
+    </div>
+    <div class='specs-table-white'>
+      <div class='specs-feature'>
+        Wi-Fi
+      </div>
+      <div class='specs-amount'>
+        <% if @product.wi_fi == true %>
+          Ja
+        <% else %>
+          Nej
+        <% end %>
+      </div>
+    </div>
+    <div class='specs-table'>
+      <div class='specs-feature'>
+        Appar
+      </div>
+      <div class='specs-amount'>
+        <%= @product.apps %>
+      </div>
+    </div>
+    <div class='specs-table-white'>
+      <div class='specs-feature'>
+        NFC (Near Field Communication)
+      </div>
+      <div class='specs-amount'>
+        <% if @product.nfc == true %>
+          Ja
+        <% else %>
+          Nej
+        <% end %>
+      </div>
+    </div>
+    <div class='specs-table'>
+      <div class='specs-feature'>
+        Röststyrning
+      </div>
+      <div class='specs-amount'>
+        <% if @product.voice_control == true %>
+          Ja
+        <% else %>
+          Nej
+        <% end %>
+      </div>
+    </div>
+    <div class='specs-table-white'>
+      <div class='specs-feature'>
+        Musik
+      </div>
+      <div class='specs-amount'>
+        <% if @product.music == true %>
+          Ja
+        <% else %>
+          Nej
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class='specs-container'>
+    <div class='specs-header'>
+      <h4>Hälsa och fitness</h4>
+    </div>
+    <div class='specs-table-white'>
+      <div class='specs-feature'>
+        GPS
+      </div>
+      <div class='specs-amount'>
+        <% if @product.gps == true %>
+          Ja
+        <% else %>
+          Nej
+        <% end %>
+
+      </div>
+    </div>
+    <div class='specs-table'>
+      <div class='specs-feature'>
+        Barometer (Höjdmätare)
+      </div>
+      <div class='specs-amount'>
+        <% if @product.barometer == true %>
+          Ja
+        <% else %>
+          Nej
+        <% end %>
+      </div>
+    </div>
+    <div class='specs-table-white'>
+      <div class='specs-feature'>
+        Sömnövervakning
+      </div>
+      <div class='specs-amount'>
+        <% if @product.sleep_tracking == true %>
+          Ja
+        <% else %>
+          Nej
+        <% end %>
+      </div>
+    </div>
+    <div class='specs-table'>
+      <div class='specs-feature'>
+        Kalorier
+      </div>
+      <div class='specs-amount'>
+        <% if @product.calories == true %>
+          Ja
+        <% else %>
+          Nej
+        <% end %>
+      </div>
+    </div>
+    <div class='specs-table-white'>
+      <div class='specs-feature'>
+        Stegräknare
+      </div>
+      <div class='specs-amount'>
+        <% if @product.steps == true %>
+          Ja
+        <% else %>
+          Nej
+        <% end %>
+      </div>
+    </div>
+    <div class='specs-table'>
+      <div class='specs-feature'>
+        Syremätning
+      </div>
+      <div class='specs-amount'>
+        <% if @product.oxygen == true %>
+          Ja
+        <% else %>
+          Nej
+        <% end %>
+      </div>
+    </div>
+    <div class='specs-table-white'>
+      <div class='specs-feature'>
+        Golf kompatibel
+      </div>
+      <div class='specs-amount'>
+        <% if @product.golf == true %>
+          Ja
+        <% else %>
+          Nej
+        <% end %>
+      </div>
+    </div>
+    <div class='specs-table'>
+      <div class='specs-feature'>
+        Cykel kompatibel
+      </div>
+      <div class='specs-amount'>
+        <% if @product.cycling == true %>
+          Ja
+        <% else %>
+          Nej
+        <% end %>
+      </div>
+    </div>
+    <div class='specs-table-white'>
+      <div class='specs-feature'>
+        Kompatibel för simning
+      </div>
+      <div class='specs-amount'>
+        <% if @product.swimming == true %>
+          Ja
+        <% else %>
+          Nej
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

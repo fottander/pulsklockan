@@ -69,6 +69,42 @@ Brand.create(
   id: 195
 )
 
+Product.create(
+  name: "Garmin Forerunner 555",
+  brand_id: "199",
+  primary_category_id: "199",
+  secondary_category_id: "198",
+  third_category_id: "197",
+  height: 10.1,
+  width: 10.1,
+  depth: 10.1,
+  weight: 100.1,
+  battery: "Battiritden är 3 h...",
+  display: "Retina",
+  touch_screen: "true",
+  water_res: "10atm",
+  memory: "32gb",
+  os_compatible: "Android and OS",
+  bluetooth: "true",
+  wi_fi: "true",
+  apps: "yes appstore",
+  nfc: "true",
+  voice_control: "true",
+  music: "true",
+  gps: "true",
+  heart_rate: "true",
+  barometer: "true",
+  sleep_tracking: "true",
+  calories: "true",
+  steps: "true",
+  oxygen: "true",
+  golf: "true",
+  cycling: "true",
+  swimming: "true",
+  active: "true",
+  id: 195
+)
+
 puts "Created #{Admin.count} admins"
 puts "Created #{Category.count} categories"
 puts "Created #{Brand.count} brands"

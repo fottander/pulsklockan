@@ -24,6 +24,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 1em;
   font-weight: 300;
+  background-color: #f9f9f9;
 }
 
 /* NOTICE & ALERT */
@@ -212,11 +213,12 @@ body {
 /* MAIN CONTAINER */
 
 .container-main {
-  background-color: #f9f9f9;
   min-height: 80vh;
   display: block;
-  padding: 1em 10em 1em 10em;
+  width: 80%;
   line-height: 1.2;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container-main .header-main {
@@ -262,6 +264,7 @@ transform: rotate(90deg);
 @media screen and (max-width: 39.9375em) {
   .container-main {
     padding: 1em 1em 1em 1em;
+    width: 100%;
   }
 
   .container-main .header-main {
@@ -459,7 +462,7 @@ transform: rotate(90deg);
   flex-direction: column;
   align-items: center;
   margin-bottom: 2em;
-  padding-right: 5em;
+  padding-right: 1em;
 }
 
 .product-card-holder img {
@@ -481,9 +484,16 @@ transform: rotate(90deg);
 }
 
 @media screen and (max-width: 39.9375em) {
+  .product-card-holder .product-facts .product-facts-holder {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 39.9375em) {
   .product-holder {
     flex-direction: column;
     justify-content: center;
+    flex-wrap: nowrap;
   }
 }
 
@@ -492,6 +502,12 @@ transform: rotate(90deg);
     padding: 0em 0em 0em 0em;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 39.9375em) and (max-width: 72em) {
+  .product-card-holder img {
+    padding: 1em 1em 1em 1em;
   }
 }
 
@@ -522,6 +538,12 @@ transform: rotate(90deg);
   color: white;
 }
 
+@media screen and (max-width: 39.9375em) {
+  .compare-header {
+    padding: 1em 7em 1em 7em;
+  }
+}
+
 .compare-content {
   display: flex;
   flex-wrap: wrap;
@@ -529,4 +551,43 @@ transform: rotate(90deg);
   justify-content: space-between;
   padding: 1em 1em 1em 1em;
   border-bottom: 1px solid #C9C9C9;
+}
+
+.specs-holder {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.specs-table {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30em;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .specs-table {
+    width: 20em;
+  }
+}
+
+.specs-table-white {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30em;
+  background-color: white;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  border-bottom: 1px solid #C9C9C9;
+  border-top: 1px solid #C9C9C9;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .specs-table-white {
+    width: 20em;
+  }
 }

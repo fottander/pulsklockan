@@ -16,7 +16,7 @@
     <%= f.collection_select(:secondary_category_id, Category.all, :id, :name, { prompt: 'Choose secondary category' }, { class: 'input-medium' }) %><br>
     <%= f.label :third_category_id, 'Third category', class: 'form-text' %>
     <%= f.collection_select(:third_category_id, Category.all, :id, :name, { prompt: 'Choose third category' }, { class: 'input-medium' }) %><br>
-
+    <h3>Allmänt</h3>
     <%= f.label :height, 'Höjd', class: 'form-text' %>
     <%= f.text_field :height, style: 'width: 80%' %><br>
     <%= f.label :width, 'Bredd', class: 'form-text' %>
@@ -25,51 +25,59 @@
     <%= f.text_field :depth, style: 'width: 80%' %><br>
     <%= f.label :weight, 'Vikt', class: 'form-text' %>
     <%= f.text_field :weight, style: 'width: 80%' %><br>
-    <%= f.label :battery_type, 'Batterityp', class: 'form-text' %>
-    <%= f.text_field :battery_type, style: 'width: 80%' %><br>
     <%= f.label :battery, 'Batteritid', class: 'form-text' %>
     <%= f.text_field :battery, style: 'width: 80%' %><br>
-
     <%= f.label :display, 'Skärm', class: 'form-text' %>
     <%= f.text_field :display, style: 'width: 80%' %><br>
+    <%= f.label :touch_screen, 'Pekskärm', class: 'form-text' %>
+    <%= f.select :touch_screen, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
     <%= f.label :water_res, 'Vattentålig', class: 'form-text' %>
     <%= f.text_field :water_res, style: 'width: 80%' %><br>
     <%= f.label :memory, 'Lagring', class: 'form-text' %>
     <%= f.text_field :memory, style: 'width: 80%' %><br>
-    <%= f.label :gps, 'Gps', class: 'form-text' %>
-    <%= f.text_field :gps, style: 'width: 80%' %><br>
+    <h3>Smarta funktioner</h3>
+    <%= f.label :os_compatible, 'OS-kompatibilitet', class: 'form-text' %>
+    <%= f.text_field :os_compatible, style: 'width: 80%' %><br>
     <%= f.label :bluetooth, 'Bluetooth', class: 'form-text' %>
-    <%= f.text_field :bluetooth, style: 'width: 80%' %><br>
+    <%= f.select :bluetooth, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
     <%= f.label :wi_fi, 'Wi-Fi', class: 'form-text' %>
-    <%= f.text_field :wi_fi, style: 'width: 80%' %><br>
-    <%= f.label :os_system, 'Operativsystem', class: 'form-text' %>
-    <%= f.text_field :os_system, style: 'width: 80%' %><br>
-
-    <%= f.label :heart_rate, 'Pulsmätare', class: 'form-text' %>
-    <%= f.text_field :heart_rate, style: 'width: 80%' %><br>
+    <%= f.select :wi_fi, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
     <%= f.label :apps, 'Appar', class: 'form-text' %>
     <%= f.text_field :apps, style: 'width: 80%' %><br>
-    <%= f.label :sleep_tracking, 'Sömn', class: 'form-text' %>
-    <%= f.text_field :sleep_tracking, style: 'width: 80%' %><br>
-    <%= f.label :fitness_features, 'Fitness', class: 'form-text' %>
-    <%= f.text_field :fitness_features, style: 'width: 80%' %><br>
-
-    <%= f.label :barometer, 'Barometer', class: 'form-text' %>
-    <%= f.select :barometer, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
-    <%= f.label :altimeter, 'Höjdmätare', class: 'form-text' %>
-    <%= f.select :altimeter, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
     <%= f.label :nfc, 'Nfc', class: 'form-text' %>
     <%= f.select :nfc, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
-    <%= f.label :touch_screen, 'Pekskärm', class: 'form-text' %>
-    <%= f.select :touch_screen, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
     <%= f.label :voice_control, 'Röststyrning', class: 'form-text' %>
     <%= f.select :voice_control, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
     <%= f.label :phone_call, 'Telefonsamtal', class: 'form-text' %>
     <%= f.select :phone_call, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
+    <%= f.label :music, 'Musik', class: 'form-text' %>
+    <%= f.select :music, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
+    <h3>Hälsa och fitness</h3>
+    <%= f.label :gps, 'Gps', class: 'form-text' %>
+    <%= f.select :gps, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
+    <%= f.label :heart_rate, 'Pulsmätare', class: 'form-text' %>
+    <%= f.select :heart_rate, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
+    <%= f.label :barometer, 'Barometer', class: 'form-text' %>
+    <%= f.select :barometer, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
+    <%= f.label :sleep_tracking, 'Sömn', class: 'form-text' %>
+    <%= f.select :sleep_tracking, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
+    <%= f.label :calories, 'Kalorier', class: 'form-text' %>
+    <%= f.select :calories, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
+    <%= f.label :steps, 'Stegräkning', class: 'form-text' %>
+    <%= f.select :steps, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
+    <%= f.label :oxygen, 'Syremätning', class: 'form-text' %>
+    <%= f.select :oxygen, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
+    <%= f.label :golf, 'Golf', class: 'form-text' %>
+    <%= f.select :golf, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
+    <%= f.label :cycling, 'Cykling', class: 'form-text' %>
+    <%= f.select :cycling, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
+    <%= f.label :swimming, 'Simning', class: 'form-text' %>
+    <%= f.select :swimming, options_for_select([['Yes', true], ['No', false]]), prompt: '-- Välj --', style: 'width: 80%' %><br>
+    <h3>Bild</h3>
     <%= f.label :avatar, 'Bild', class: 'form-text' %>
     <%= f.file_field :avatar, style: 'width: 80%' %><br>
     <%= image_tag(@product.avatar, width: 200) if @product.avatar.attached? %><br>
-
+    <h3>Affiliate</h3>
     <%= f.label :store_1_name, 'Butik Netonnet namn', class: 'form-text' %>
     <%= f.select :store_1_name, options_for_select(Product::STORE_OPTIONS), prompt: '-- Välj --', class: 'form-text' %><br>
     <%= f.label :store_1_link, 'Butik Netonnet länk', class: 'form-text' %>

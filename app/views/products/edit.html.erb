@@ -16,7 +16,7 @@
     <%= f.collection_select(:secondary_category_id, Category.all, :id, :name, { include_blank: true, selected: @product.secondary_category_id }, { class: 'input-medium' }) %><br>
     <%= f.label :third_category_id, 'Third Category(bäst i test)', class: 'form-text' %>
     <%= f.collection_select(:third_category_id, Category.all, :id, :name, { include_blank: true, selected: @product.third_category_id }, { class: 'input-medium' }) %><br>
-
+    <h3>Allmänt</h3>
     <%= f.label :height, 'Höjd', class: 'form-text' %>
     <%= f.text_field :height, value: @product.height, style: 'width: 80%' %><br>
     <%= f.label :width, 'Bredd', class: 'form-text' %>
@@ -25,52 +25,63 @@
     <%= f.text_field :depth, value: @product.depth, style: 'width: 80%' %><br>
     <%= f.label :weight, 'Vikt', class: 'form-text' %>
     <%= f.text_field :weight, value: @product.weight, style: 'width: 80%' %><br>
-    <%= f.label :battery_type, 'Batterityp', class: 'form-text' %>
-    <%= f.text_field :battery_type, value: @product.battery_type, style: 'width: 80%' %><br>
     <%= f.label :battery, 'Batteritid', class: 'form-text' %>
     <%= f.text_field :battery, value: @product.battery, style: 'width: 80%' %><br>
-
     <%= f.label :display, 'Skärm', class: 'form-text' %>
     <%= f.text_field :display, value: @product.display, style: 'width: 80%' %><br>
+    <%= f.label :touch_screen, 'Pekskärm', class: 'form-text' %>
+    <%= f.select :touch_screen, options_for_select([['yes', true], ['No', false]], selected: @product.touch_screen), style: 'width: 80%' %><br>
     <%= f.label :water_res, 'Vattentålig', class: 'form-text' %>
     <%= f.text_field :water_res, value: @product.water_res, style: 'width: 80%' %><br>
     <%= f.label :memory, 'Lagring', class: 'form-text' %>
     <%= f.text_field :memory, value: @product.memory, style: 'width: 80%' %><br>
-    <%= f.label :gps, 'Gps', class: 'form-text' %>
-    <%= f.text_field :gps, value: @product.gps, style: 'width: 80%' %><br>
-    <%= f.label :bluetooth, 'Bluetooth', class: 'form-text' %>
-    <%= f.text_field :bluetooth, value: @product.bluetooth, style: 'width: 80%' %><br>
-    <%= f.label :wi_fi, 'Wi-Fi', class: 'form-text' %>
-    <%= f.text_field :wi_fi, value: @product.wi_fi, style: 'width: 80%' %><br>
-    <%= f.label :os_system, 'Operativsystem', class: 'form-text' %>
-    <%= f.text_field :os_system, value: @product.os_system, style: 'width: 80%' %><br>
 
-    <%= f.label :heart_rate, 'Pulsmätare', class: 'form-text' %>
-    <%= f.text_field :heart_rate, value: @product.heart_rate, style: 'width: 80%' %><br>
+    <h3>Smarta funktioner</h3>
+    <%= f.label :os_compatible, 'OS-kompatibilitet', class: 'form-text' %>
+    <%= f.text_field :os_compatible, value: @product.os_compatible, style: 'width: 80%' %><br>
+    <%= f.label :bluetooth, 'Bluetooth', class: 'form-text' %>
+    <%= f.select :bluetooth, options_for_select([['yes', true], ['No', false]], selected: @product.bluetooth), style: 'width: 80%' %><br>
+    <%= f.label :wi_fi, 'Wi-Fi', class: 'form-text' %>
+    <%= f.select :wi_fi, options_for_select([['yes', true], ['No', false]], selected: @product.wi_fi), style: 'width: 80%' %><br>
     <%= f.label :apps, 'Appar', class: 'form-text' %>
     <%= f.text_field :apps, value: @product.apps, style: 'width: 80%' %><br>
-    <%= f.label :sleep_tracking, 'Sömn', class: 'form-text' %>
-    <%= f.text_field :sleep_tracking, value: @product.sleep_tracking, style: 'width: 80%' %><br>
-    <%= f.label :fitness_features, 'Fitness', class: 'form-text' %>
-    <%= f.text_field :fitness_features, value: @product.fitness_features, style: 'width: 80%' %><br>
-
-    <%= f.label :barometer, 'Barometer', class: 'form-text' %>
-    <%= f.select :barometer, options_for_select([['yes', true], ['No', false]], selected: @product.barometer), style: 'width: 80%' %><br>
-    <%= f.label :altimeter, 'Höjdmätare', class: 'form-text' %>
-    <%= f.select :altimeter, options_for_select([['yes', true], ['No', false]], selected: @product.altimeter), style: 'width: 80%' %><br>
     <%= f.label :nfc, 'Nfc', class: 'form-text' %>
     <%= f.select :nfc, options_for_select([['yes', true], ['No', false]], selected: @product.nfc), style: 'width: 80%' %><br>
-    <%= f.label :touch_screen, 'Pekskärm', class: 'form-text' %>
-    <%= f.select :touch_screen, options_for_select([['yes', true], ['No', false]], selected: @product.touch_screen), style: 'width: 80%' %><br>
     <%= f.label :voice_control, 'Röststyrning', class: 'form-text' %>
     <%= f.select :voice_control, options_for_select([['yes', true], ['No', false]], selected: @product.voice_control), style: 'width: 80%' %><br>
     <%= f.label :phone_call, 'Telefonsamtal', class: 'form-text' %>
     <%= f.select :phone_call, options_for_select([['yes', true], ['No', false]], selected: @product.phone_call), style: 'width: 80%' %><br>
+    <%= f.label :music, 'Musik', class: 'form-text' %>
+    <%= f.select :music, options_for_select([['yes', true], ['No', false]], selected: @product.music), style: 'width: 80%' %><br>
 
+    <h3>Hälsa och fitness</h3>
+    <%= f.label :gps, 'Gps', class: 'form-text' %>
+    <%= f.select :gps, options_for_select([['yes', true], ['No', false]], selected: @product.gps), style: 'width: 80%' %><br>
+    <%= f.label :heart_rate, 'Pulsmätare', class: 'form-text' %>
+    <%= f.select :heart_rate, options_for_select([['yes', true], ['No', false]], selected: @product.heart_rate), style: 'width: 80%' %><br>
+    <%= f.label :barometer, 'Barometer', class: 'form-text' %>
+    <%= f.select :barometer, options_for_select([['yes', true], ['No', false]], selected: @product.barometer), style: 'width: 80%' %><br>
+    <%= f.label :sleep_tracking, 'Sömn', class: 'form-text' %>
+    <%= f.select :sleep_tracking, options_for_select([['yes', true], ['No', false]], selected: @product.sleep_tracking), style: 'width: 80%' %><br>
+    <%= f.label :calories, 'Kalorier', class: 'form-text' %>
+    <%= f.select :calories, options_for_select([['yes', true], ['No', false]], selected: @product.calories), style: 'width: 80%' %><br>
+    <%= f.label :steps, 'Stegräkning', class: 'form-text' %>
+    <%= f.select :steps, options_for_select([['yes', true], ['No', false]], selected: @product.steps), style: 'width: 80%' %><br>
+    <%= f.label :oxygen, 'Syremätning', class: 'form-text' %>
+    <%= f.select :oxygen, options_for_select([['yes', true], ['No', false]], selected: @product.oxygen), style: 'width: 80%' %><br>
+    <%= f.label :golf, 'Golf', class: 'form-text' %>
+    <%= f.select :golf, options_for_select([['yes', true], ['No', false]], selected: @product.golf), style: 'width: 80%' %><br>
+    <%= f.label :cycling, 'Cykling', class: 'form-text' %>
+    <%= f.select :cycling, options_for_select([['yes', true], ['No', false]], selected: @product.cycling), style: 'width: 80%' %><br>
+    <%= f.label :swimming, 'Simning', class: 'form-text' %>
+    <%= f.select :swimming, options_for_select([['yes', true], ['No', false]], selected: @product.swimming), style: 'width: 80%' %><br>
+
+    <h3>Bild</h3>
     <%= f.label :avatar, 'Bild', class: 'form-text' %>
     <%= f.file_field :avatar, value: @product.avatar %><br>
     <%= image_tag(@product.avatar, width: 200) if @product.avatar.attached? %><br>
 
+    <h3>Affiliate</h3>
     <%= f.label :store_1_name, 'Butik Netonnet namn', class: 'form-text' %>
     <%= f.select :store_1_name, options_for_select(Product::STORE_OPTIONS, { selected: @product.store_1_name, include_blank: '-- Välj --' }), required: true, class: 'form-text' %><br>
     <%= f.label :store_1_link, 'Butik Netonnet länk', class: 'form-text' %>
@@ -92,8 +103,9 @@
     <%= f.label :store_3_price, 'Butik Cdon pris', class: 'form-text' %>
     <%= f.text_field :store_3_price, value: @product.store_3_price %> <br><br>
 
+    <h3>Aktiv</h3>
     <%= f.label :active, 'Kryssa i för att aktivera', class: 'form-text' %>
-    <%= f.check_box :active, value: true %><br>
+    <%= f.check_box :active, value: true %><br><br>
 
     <%= f.submit 'Edit', class: 'add-button' %>
   <% end %>

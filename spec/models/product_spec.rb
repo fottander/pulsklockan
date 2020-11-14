@@ -8,23 +8,35 @@ RSpec.describe Product, type: :model do
   end
 
   describe 'DB table' do
+    it { is_expected.to have_db_column :brand_id }
     it { is_expected.to have_db_column :name }
-    it { is_expected.to have_db_column :battery }
+    it { is_expected.to have_db_column :height }
+    it { is_expected.to have_db_column :width }
+    it { is_expected.to have_db_column :depth }
     it { is_expected.to have_db_column :weight }
+    it { is_expected.to have_db_column :battery }
     it { is_expected.to have_db_column :display }
+    it { is_expected.to have_db_column :touch_screen }
     it { is_expected.to have_db_column :water_res }
     it { is_expected.to have_db_column :memory }
-    it { is_expected.to have_db_column :gps }
+    it { is_expected.to have_db_column :os_compatible }
     it { is_expected.to have_db_column :bluetooth }
     it { is_expected.to have_db_column :wi_fi }
-    it { is_expected.to have_db_column :os_system }
+    it { is_expected.to have_db_column :apps }
     it { is_expected.to have_db_column :nfc }
-    it { is_expected.to have_db_column :heart_rate }
-    it { is_expected.to have_db_column :touch_screen }
     it { is_expected.to have_db_column :voice_control }
     it { is_expected.to have_db_column :phone_call }
-    it { is_expected.to have_db_column :apps }
+    it { is_expected.to have_db_column :music }
+    it { is_expected.to have_db_column :gps }
+    it { is_expected.to have_db_column :heart_rate }
+    it { is_expected.to have_db_column :barometer }
     it { is_expected.to have_db_column :sleep_tracking }
+    it { is_expected.to have_db_column :calories }
+    it { is_expected.to have_db_column :steps }
+    it { is_expected.to have_db_column :oxygen }
+    it { is_expected.to have_db_column :golf }
+    it { is_expected.to have_db_column :cycling }
+    it { is_expected.to have_db_column :swimming }
     it { is_expected.to have_db_column :store_1_name }
     it { is_expected.to have_db_column :store_1_link }
     it { is_expected.to have_db_column :store_1_price }
