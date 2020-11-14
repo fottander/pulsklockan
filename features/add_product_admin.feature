@@ -25,9 +25,6 @@ Feature: Add product admin
     And I click "Add product"
     Then I should see "Add products"
     And I fill in "Name" with "Garmin 235"
-    And I fill in "Description" with "Garmin 235 finns i många varianter"
-    And I fill in "Price" with "235"
-    And I fill in "Länk" with "https://blabla2345.se"
     And I select "Garmin" from "Brand"
     And I select "Pulsklockor" from "Primary category"
     And I select "Aktivitetsarmband" from "Secondary category"
@@ -38,8 +35,10 @@ Feature: Add product admin
     And I should see "Garmin 235"
     And I click "Edit"
     And I fill in "Name" with "Garmin 600"
-    And I fill in "Price" with "55.5"
     And I attach file
+    And I select "NetOnNet" from "Butik Netonnet namn"
+    And I fill in "Butik Netonnet länk" with "https://www.netonnet.se/art/telefoner/smartwatch/garminsmartwatch/garmin-vivomove-hr-black-rose-gold-sm/1009652.15387/"
+    And I check active box
     And I click "Edit"
     Then I should see "Product edited"
     And I click "Cancel"

@@ -1,24 +1,88 @@
-<h1><%= @product.name %></h1>
-<p>hello <%= @product.name %></p>
-Märke: <%= @product.brand.name %><br>
-Pris: <%= @product.price %><br>
-<%= link_to "Köp här", "#{@product.external_link}" %><br>
-Mått: <%= @product.dimension %><br>
-Batteri: <%= @product.battery %><br>
+<div class=product-header>
+  <h1><%= @product.name %></h1>
+</div>
+<div class='product-holder'>
+  <div class='product-card-holder'>
+    <%= image_tag(@product.avatar) if @product.avatar.attached? %>
+  </div>
+  <div class='product-card-holder'>
+    <div class='product-compare-holder'>
+      <div class='compare-header'>
+        Prisjämförelse
+      </div>
+      <div class='compare-content'>
+        <div class='compare-name'>
+          <%= @product.store_1_name %>
+        </div>
+        <div class='compare-price'>
+          <%= @product.store_1_price %>
+        </div>
+        <div class='compare-link'>
+          <%= link_to 'Till butik', "#{@product.store_1_link}" %>
+        </div>
+      </div>
+      <p style='font-size: 0.7em'><span style='color: green;'>✓</span> Endast pålitliga återförsäljare</p>
+      <div class='product-facts'>
+        <h4>Snabbfakta</h4>
+        <div class='product-facts-holder'>
+          <div class='facts-content'>
+            Märke
+          </div>
+          <div class='facts-content'>
+            <%= link_to "#{@product.brand.name}", brand_path(@product.brand) %>
+          </div>
+        </div>
+        <div class='product-facts-holder'>
+          <div class='facts-content'>
+            Operativsystem
+          </div>
+          <div class='facts-content'>
+            <%= @product.os_system %>
+          </div>
+        </div>
+        <div class='product-facts-holder'>
+          <div class='facts-content'>
+            Pulsmätare
+          </div>
+          <div class='facts-content'>
+            <%= @product.heart_rate %>
+          </div>
+        </div>
+        <div class='product-facts-holder'>
+          <div class='facts-content'>
+            Batteritid
+          </div>
+          <div class='facts-content'>
+            <%= @product.battery %>h
+          </div>
+        </div>
+      </div>
+    </div>
+    <% if @product.store_2_name? %>
+      <%= @product.store_2_name %><%= @product.store_2_price %><%= link_to 'Till butik', "#{@product.store_2_link}" %><br>
+    <% end %>
+    <% if @product.store_3_name? %>
+      <%= @product.store_3_name %><%= @product.store_3_price %><%= link_to 'Till butik', "#{@product.store_3_link}" %><br>
+    <% end %>
+  </div>
+</div>
+Höjd: <%= @product.height %><br>
+Bredd: <%= @product.width %><br>
+Djup: <%= @product.depth %><br>
 Vikt: <%= @product.weight %><br>
+Batterityp: <%= @product.battery_type %><br>
 Skärm: <%= @product.display %><br>
-Vattentålig: <%= @product.water_res %><br>
+Vattentålighet: <%= @product.water_res %><br>
 Lagring: <%= @product.memory %><br>
 Gps: <%= @product.gps %><br>
 Bluetooth: <%= @product.bluetooth %><br>
-Wi-fi: <%= @product.wi_fi %><br>
-Operativsystem: <%= @product.os_system %><br>
-NFC: <%= @product.nfc %><br>
-Puls: <%= @product.heart_rate %><br>
-Pekskärm: <%= @product.touch_screen %><br>
-Röstkontroll: <%= @product.voice_control %><br>
-Telefonsamtal: <%= @product.phone_call %><br>
-Offline Musik: <%= @product.offline_music %><br>
+Wi-Fi: <%= @product.wi_fi %><br>
 Appar: <%= @product.apps %><br>
 Sömn: <%= @product.sleep_tracking %><br>
 Fitness: <%= @product.fitness_features %><br>
+Barometer: <%= @product.barometer %><br>
+Höjdmätare: <%= @product.altimeter %><br>
+Nfc: <%= @product.nfc %><br>
+Pekskärm: <%= @product.touch_screen %><br>
+Röststyrning: <%= @product.voice_control %><br>
+Telefonsamtal: <%= @product.phone_call %><br>

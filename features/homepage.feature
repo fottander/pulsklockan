@@ -8,8 +8,8 @@ Feature: Homepage
       | id | name        | description    |
       | 1  | Garmin      | Denna Garmin.. |
     Given the following products exists
-      | id | name                  | brand_id |
-      | 1  | Garmin Forerunner 235 | 1        |
+      | id | name                  | brand_id | active |
+      | 1  | Garmin Forerunner 235 | 1        | true   |
 
   Scenario: I visit the homepage and see some content
     Given I am on the homepage
@@ -31,4 +31,4 @@ Feature: Homepage
     And I click "Alla Garmin"
     Then I should see "Här nedan hittar du alla Garmin produkter"
     And I click "Garmin Forerunner 235"
-    Then I should see "hello Garmin Forerunner 235"
+    Then I should see "Garmin Forerunner 235"

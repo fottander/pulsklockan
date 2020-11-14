@@ -9,9 +9,6 @@ RSpec.describe Product, type: :model do
 
   describe 'DB table' do
     it { is_expected.to have_db_column :name }
-    it { is_expected.to have_db_column(:price).of_type(:float) }
-    it { is_expected.to have_db_column :description }
-    it { is_expected.to have_db_column :dimension }
     it { is_expected.to have_db_column :battery }
     it { is_expected.to have_db_column :weight }
     it { is_expected.to have_db_column :display }
@@ -26,16 +23,22 @@ RSpec.describe Product, type: :model do
     it { is_expected.to have_db_column :touch_screen }
     it { is_expected.to have_db_column :voice_control }
     it { is_expected.to have_db_column :phone_call }
-    it { is_expected.to have_db_column :offline_music }
     it { is_expected.to have_db_column :apps }
     it { is_expected.to have_db_column :sleep_tracking }
-    it { is_expected.to have_db_column :fitness_features }
+    it { is_expected.to have_db_column :store_1_name }
+    it { is_expected.to have_db_column :store_1_link }
+    it { is_expected.to have_db_column :store_1_price }
+    it { is_expected.to have_db_column :store_2_name }
+    it { is_expected.to have_db_column :store_2_link }
+    it { is_expected.to have_db_column :store_2_price }
+    it { is_expected.to have_db_column :store_3_name }
+    it { is_expected.to have_db_column :store_3_link }
+    it { is_expected.to have_db_column :store_3_price }
+    it { is_expected.to have_db_column :active }
   end
 
   describe 'Validations' do
     it { is_expected.to validate_presence_of :name }
-    it { is_expected.to validate_presence_of :description }
-    it { is_expected.to validate_presence_of :price }
   end
 
   describe 'Associations' do

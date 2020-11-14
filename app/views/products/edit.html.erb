@@ -8,12 +8,6 @@
     <% end %>
     <%= f.label :name, 'Name', class: 'form-text' %>
     <%= f.text_field :name, value: @product.name %><br>
-    <%= f.label :description, 'Description', class: 'form-text' %>
-    <%= f.text_area :description, rows: 5, style: 'width: 100%', value: @product.description %>
-    <%= f.label :price, 'Price', class: 'form-text' %>
-    <%= f.text_field :price, value: @product.price %><br>
-    <%= f.label :external_link, 'Länk', class: 'form-text' %>
-    <%= f.text_field :external_link, value: @product.external_link %><br>
     <%= f.label :brand_id, 'Brand', class: 'form-text' %>
     <%= f.collection_select(:brand_id, Brand.all, :id, :name, { include_blank: true, selected: @product.brand_id }, { class: 'input-medium' }) %><br>
     <%= f.label :primary_category_id, 'Primary Category', class: 'form-text' %>
@@ -22,47 +16,84 @@
     <%= f.collection_select(:secondary_category_id, Category.all, :id, :name, { include_blank: true, selected: @product.secondary_category_id }, { class: 'input-medium' }) %><br>
     <%= f.label :third_category_id, 'Third Category(bäst i test)', class: 'form-text' %>
     <%= f.collection_select(:third_category_id, Category.all, :id, :name, { include_blank: true, selected: @product.third_category_id }, { class: 'input-medium' }) %><br>
-    <%= f.label :dimension, 'Mått', class: 'form-text' %>
-    <%= f.text_field :dimension, value: @product.dimension %><br>
-    <%= f.label :battery, 'Batteri', class: 'form-text' %>
-    <%= f.text_field :battery, value: @product.battery %><br>
+
+    <%= f.label :height, 'Höjd', class: 'form-text' %>
+    <%= f.text_field :height, value: @product.height, style: 'width: 80%' %><br>
+    <%= f.label :width, 'Bredd', class: 'form-text' %>
+    <%= f.text_field :width, value: @product.width, style: 'width: 80%' %><br>
+    <%= f.label :depth, 'Djup', class: 'form-text' %>
+    <%= f.text_field :depth, value: @product.depth, style: 'width: 80%' %><br>
     <%= f.label :weight, 'Vikt', class: 'form-text' %>
-    <%= f.text_field :weight, value: @product.weight %><br>
+    <%= f.text_field :weight, value: @product.weight, style: 'width: 80%' %><br>
+    <%= f.label :battery_type, 'Batterityp', class: 'form-text' %>
+    <%= f.text_field :battery_type, value: @product.battery_type, style: 'width: 80%' %><br>
+    <%= f.label :battery, 'Batteritid', class: 'form-text' %>
+    <%= f.text_field :battery, value: @product.battery, style: 'width: 80%' %><br>
+
     <%= f.label :display, 'Skärm', class: 'form-text' %>
-    <%= f.text_field :display, value: @product.display %><br>
+    <%= f.text_field :display, value: @product.display, style: 'width: 80%' %><br>
     <%= f.label :water_res, 'Vattentålig', class: 'form-text' %>
-    <%= f.text_field :water_res, value: @product.water_res %><br>
+    <%= f.text_field :water_res, value: @product.water_res, style: 'width: 80%' %><br>
     <%= f.label :memory, 'Lagring', class: 'form-text' %>
-    <%= f.text_field :memory, value: @product.memory %><br>
+    <%= f.text_field :memory, value: @product.memory, style: 'width: 80%' %><br>
     <%= f.label :gps, 'Gps', class: 'form-text' %>
-    <%= f.text_field :gps, value: @product.gps %><br>
+    <%= f.text_field :gps, value: @product.gps, style: 'width: 80%' %><br>
     <%= f.label :bluetooth, 'Bluetooth', class: 'form-text' %>
-    <%= f.text_field :bluetooth, value: @product.bluetooth %><br>
+    <%= f.text_field :bluetooth, value: @product.bluetooth, style: 'width: 80%' %><br>
     <%= f.label :wi_fi, 'Wi-Fi', class: 'form-text' %>
-    <%= f.text_field :wi_fi, value: @product.wi_fi %><br>
+    <%= f.text_field :wi_fi, value: @product.wi_fi, style: 'width: 80%' %><br>
     <%= f.label :os_system, 'Operativsystem', class: 'form-text' %>
-    <%= f.text_field :os_system, value: @product.os_system %><br>
-    <%= f.label :nfc, 'NFC', class: 'form-text' %>
-    <%= f.text_field :nfc, value: @product.nfc %><br>
+    <%= f.text_field :os_system, value: @product.os_system, style: 'width: 80%' %><br>
+
     <%= f.label :heart_rate, 'Pulsmätare', class: 'form-text' %>
-    <%= f.text_field :heart_rate, value: @product.heart_rate %><br>
-    <%= f.label :touch_screen, 'Pekskärm', class: 'form-text' %>
-    <%= f.text_field :touch_screen, value: @product.touch_screen %><br>
-    <%= f.label :voice_control, 'Röstkontroll', class: 'form-text' %>
-    <%= f.text_field :voice_control, value: @product.voice_control %><br>
-    <%= f.label :phone_call, 'Telefonsamtal', class: 'form-text' %>
-    <%= f.text_field :phone_call, value: @product.phone_call %><br>
-    <%= f.label :offline_music, 'Offline musik', class: 'form-text' %>
-    <%= f.text_field :offline_music, value: @product.offline_music %><br>
+    <%= f.text_field :heart_rate, value: @product.heart_rate, style: 'width: 80%' %><br>
     <%= f.label :apps, 'Appar', class: 'form-text' %>
-    <%= f.text_field :apps, value: @product.apps %><br>
+    <%= f.text_field :apps, value: @product.apps, style: 'width: 80%' %><br>
     <%= f.label :sleep_tracking, 'Sömn', class: 'form-text' %>
-    <%= f.text_field :sleep_tracking, value: @product.sleep_tracking %><br>
+    <%= f.text_field :sleep_tracking, value: @product.sleep_tracking, style: 'width: 80%' %><br>
     <%= f.label :fitness_features, 'Fitness', class: 'form-text' %>
-    <%= f.text_field :fitness_features, value: @product.fitness_features %><br>
+    <%= f.text_field :fitness_features, value: @product.fitness_features, style: 'width: 80%' %><br>
+
+    <%= f.label :barometer, 'Barometer', class: 'form-text' %>
+    <%= f.select :barometer, options_for_select([['yes', true], ['No', false]], selected: @product.barometer), style: 'width: 80%' %><br>
+    <%= f.label :altimeter, 'Höjdmätare', class: 'form-text' %>
+    <%= f.select :altimeter, options_for_select([['yes', true], ['No', false]], selected: @product.altimeter), style: 'width: 80%' %><br>
+    <%= f.label :nfc, 'Nfc', class: 'form-text' %>
+    <%= f.select :nfc, options_for_select([['yes', true], ['No', false]], selected: @product.nfc), style: 'width: 80%' %><br>
+    <%= f.label :touch_screen, 'Pekskärm', class: 'form-text' %>
+    <%= f.select :touch_screen, options_for_select([['yes', true], ['No', false]], selected: @product.touch_screen), style: 'width: 80%' %><br>
+    <%= f.label :voice_control, 'Röststyrning', class: 'form-text' %>
+    <%= f.select :voice_control, options_for_select([['yes', true], ['No', false]], selected: @product.voice_control), style: 'width: 80%' %><br>
+    <%= f.label :phone_call, 'Telefonsamtal', class: 'form-text' %>
+    <%= f.select :phone_call, options_for_select([['yes', true], ['No', false]], selected: @product.phone_call), style: 'width: 80%' %><br>
+
     <%= f.label :avatar, 'Bild', class: 'form-text' %>
     <%= f.file_field :avatar, value: @product.avatar %><br>
     <%= image_tag(@product.avatar, width: 200) if @product.avatar.attached? %><br>
+
+    <%= f.label :store_1_name, 'Butik Netonnet namn', class: 'form-text' %>
+    <%= f.select :store_1_name, options_for_select(Product::STORE_OPTIONS, { selected: @product.store_1_name, include_blank: '-- Välj --' }), required: true, class: 'form-text' %><br>
+    <%= f.label :store_1_link, 'Butik Netonnet länk', class: 'form-text' %>
+    <%= f.text_field :store_1_link, value: @product.store_1_link %><br>
+    <%= f.label :store_1_price, 'Butik Netonnet pris', class: 'form-text' %>
+    <%= f.text_field :store_1_price, value: @product.store_1_price %> <br><br>
+
+    <%= f.label :store_2_name, 'Butik Sportamore namn', class: 'form-text' %>
+    <%= f.select :store_2_name, options_for_select(Product::STORE_OPTIONS), { include_blank: '-- Välj --' }, class: 'form-text' %><br>
+    <%= f.label :store_2_link, 'Butik Sportamore länk(Tradedoubler)', class: 'form-text' %>
+    <%= f.text_field :store_2_link, value: @product.store_2_link %><br>
+    <%= f.label :store_2_price, 'Butik Sportamore pris', class: 'form-text' %>
+    <%= f.text_field :store_2_price, value: @product.store_2_price %> <br><br>
+
+    <%= f.label :store_3_name, 'Butik Cdon namn', class: 'form-text' %>
+    <%= f.select :store_3_name, options_for_select(Product::STORE_OPTIONS), { include_blank: '-- Välj --' }, class: 'form-text' %><br>
+    <%= f.label :store_3_link, 'Butik Cdon länk(Tradedoubler)', class: 'form-text' %>
+    <%= f.text_field :store_3_link, value: @product.store_3_link %><br>
+    <%= f.label :store_3_price, 'Butik Cdon pris', class: 'form-text' %>
+    <%= f.text_field :store_3_price, value: @product.store_3_price %> <br><br>
+
+    <%= f.label :active, 'Kryssa i för att aktivera', class: 'form-text' %>
+    <%= f.check_box :active, value: true %><br>
 
     <%= f.submit 'Edit', class: 'add-button' %>
   <% end %>
