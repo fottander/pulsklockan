@@ -4,6 +4,8 @@ class BrandsController < ApplicationController
   def show
     @brand = Brand.find(params[:id])
     @products = @brand.products.active.with_attached_avatar
+    add_breadcrumb 'Hem', :root_path
+    add_breadcrumb "#{@brand.name}"
   end
 
   def index

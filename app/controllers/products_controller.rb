@@ -3,6 +3,10 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    add_breadcrumb 'Hem', :root_path
+    add_breadcrumb "#{@product.primary_category.name}", category_path(@product.primary_category)
+    add_breadcrumb "#{@product.brand.name}", brand_path(@product.brand)
+    add_breadcrumb @product.name
   end
 
   def index

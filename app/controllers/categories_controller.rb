@@ -4,6 +4,8 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @products = Product.with_attached_avatar.active.where("primary_category_id = ? OR secondary_category_id = ? OR third_category_id = ?", params[:id], params[:id], params[:id])
+    add_breadcrumb 'Hem', :root_path
+    add_breadcrumb "#{@category.name}"
   end
 
   def index
