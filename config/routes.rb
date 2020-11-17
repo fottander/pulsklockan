@@ -16,5 +16,7 @@ Rails.application.routes.draw do
 
   resources :brands, only: [:show, :new, :create, :edit, :update, :index, :destroy]
 
-  resources :products, only: [:show, :new, :create, :edit, :update, :index, :destroy]
+  resources :products, only: [:new, :create, :edit, :update, :index, :destroy]
+
+  get '/products/:id', to: 'products#show'
 end
