@@ -1,5 +1,8 @@
 <div class=product-header>
   <h1><%= @product.name %></h1>
+  <div class='breadcrumb-holder'>
+       <%= render_breadcrumbs separator: ' > ' %>
+   </div>
 </div>
 <div class='product-holder'>
   <div class='product-card-holder'>

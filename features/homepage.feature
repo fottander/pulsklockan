@@ -8,8 +8,8 @@ Feature: Homepage
       | id | name        | description    |
       | 1  | Garmin      | Denna Garmin.. |
     Given the following products exists
-      | id | name                  | brand_id | active |
-      | 1  | Garmin Forerunner 235 | 1        | true   |
+      | id | name                  | brand_id | active | primary_category_id |
+      | 1  | Garmin Forerunner 235 | 1        | true   | 1                   |
 
   Scenario: I visit the homepage and see some content
     Given I am on the homepage
@@ -23,12 +23,13 @@ Feature: Homepage
   Scenario: I click my through to a category
     Given I am on the homepage
     And I click "Alla Pulsklockor"
-    Then I should see "Här nedan hittar du alla Pulsklockor"
-    And I should see "hello Pulsklockor"
+    Then I should see "Alla Pulsklockor"
+    And I should see "Just nu hittar du 1 av marknadens mest populära Pulsklockor"
 
   Scenario: I click my through to a brand and a product
     Given I am on the homepage
     And I click "Alla Garmin"
-    Then I should see "Här nedan hittar du alla Garmin produkter"
+    Then I should see "Alla Garmin produkter"
+    And I should see "Här hittar du 1 av nätets mest populära Garmin produkter"
     And I click "Garmin Forerunner 235"
     Then I should see "Garmin Forerunner 235"

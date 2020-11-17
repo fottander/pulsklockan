@@ -64,6 +64,26 @@ a:visited {
   text-decoration: none !important;
 }
 
+/* Breadcrumbs */
+
+ .breadcrumb-holder {
+   color: #B1B1B1;
+   font-size: 0.9rem;
+   font-family: 'Montserrat',Arial,sans-serif;
+   margin-top: -1em;
+   margin-bottom: 1em;
+ }
+
+ .breadcrumb-holder a {
+   color: #B1B1B1;
+   text-decoration: none;
+ }
+
+ .breadcrumb-holder a:visited {
+   color: #B1B1B1;
+   text-decoration: none;
+ }
+
 /* NOTICE & ALERT */
 
 #notice-wrapper {
