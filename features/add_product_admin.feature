@@ -37,7 +37,7 @@ Feature: Add product admin
     And I fill in "Name" with "Garmin 600"
     And I attach file
     And I select "NetOnNet" from "Butik Netonnet namn"
-    And I fill in "Butik Netonnet länk" with "https://www.netonnet.se/art/telefoner/smartwatch/garminsmartwatch/garmin-vivomove-hr-black-rose-gold-sm/1009652.15387/"
+    And I fill in "Butik Netonnet länk" with "https://www.netonnet.se/art/telefoner/smartwatch/apple-watch/apple-watch-series-6-gps-40mm-space-gray-aluminium-case-with-black-sport-band-regular/1014608.13980/"
     And I check active box
     And I click "Edit"
     Then I should see "Product edited"
