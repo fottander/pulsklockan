@@ -36,7 +36,20 @@ class ProductsController < ApplicationController
   end
 
   def update
+    @categories = Category.all
     @product = Product.find_by_slug(params[:id])
+    if @product.primary_category_id?
+      @primary_category = @categories.find_by_id(@product.primary_category_id)
+      @product.primary_category_name = @primary_category.slug
+    end
+    if @product.secondary_category_id?
+      @secondary_category = @categories.find_by_id(@product.secondary_category_id)
+      @product.secondary_category_name = @secondary_category.slug
+    end
+    if @product.third_category_id?
+      @third_category = @categories.find_by_id(@product.third_category_id)
+      @product.third_category_name = @third_category.slug
+    end
     respond_to do |format|
       if @product.update product_params
         format.html { redirect_to edit_product_path(@product), notice: 'Product edited!' }

@@ -2,8 +2,8 @@ class CategoriesController < ApplicationController
   before_action :authenticate_admin!, only: [:index, :new, :create, :edit, :update]
 
   def show
-    @category = Category.find(params[:id])
-    @products = Product.with_attached_avatar.active.where("primary_category_id = ? OR secondary_category_id = ? OR third_category_id = ?", params[:id], params[:id], params[:id])
+    @category = Category.friendly.find(params[:id])
+    @products = Product.with_attached_avatar.active.where("primary_category_name = ? OR secondary_category_name = ? OR third_category_name = ?", params[:id], params[:id], params[:id])
     add_breadcrumb 'Hem', :root_path
     add_breadcrumb "#{@category.name}"
   end
@@ -30,11 +30,11 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    @category = Category.find(params[:id])
+    @category = Category.find_by_slug(params[:id])
   end
 
   def update
-    @category = Category.find(params[:id])
+    @category = Category.find_by_slug(params[:id])
     respond_to do |format|
       if @category.update category_params
         format.html { redirect_to edit_category_path(@category), notice: 'Category edited!' }
@@ -47,7 +47,7 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category = Category.find(params[:id])
+    @category = Category.find_by_slug(params[:id])
     if @category.destroy
       flash[:notice] = "Category deleted"
       redirect_back(fallback_location: root_path)

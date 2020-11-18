@@ -47,6 +47,12 @@ RSpec.describe Product, type: :model do
     it { is_expected.to have_db_column :store_3_link }
     it { is_expected.to have_db_column :store_3_price }
     it { is_expected.to have_db_column :active }
+    it { is_expected.to have_db_column :primary_category_id }
+    it { is_expected.to have_db_column :secondary_category_id }
+    it { is_expected.to have_db_column :third_category_id }
+    it { is_expected.to have_db_column :primary_category_name }
+    it { is_expected.to have_db_column :secondary_category_name }
+    it { is_expected.to have_db_column :third_category_name }
   end
 
   describe 'Validations' do

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_17_131444) do
+ActiveRecord::Schema.define(version: 2020_11_18_123008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 2020_11_17_131444) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
     t.text "extra_info"
+    t.string "slug"
+    t.index ["slug"], name: "index_brands_on_slug", unique: true
   end
 
   create_table "categories", force: :cascade do |t|
@@ -66,6 +68,8 @@ ActiveRecord::Schema.define(version: 2020_11_17_131444) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
+    t.string "slug"
+    t.index ["slug"], name: "index_categories_on_slug", unique: true
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -122,6 +126,9 @@ ActiveRecord::Schema.define(version: 2020_11_17_131444) do
     t.text "store_3_link"
     t.float "store_3_price"
     t.boolean "active", default: false
+    t.text "primary_category_name"
+    t.text "secondary_category_name"
+    t.text "third_category_name"
     t.bigint "primary_category_id"
     t.bigint "secondary_category_id"
     t.bigint "third_category_id"
