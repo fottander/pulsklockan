@@ -21,6 +21,9 @@ class Product < ApplicationRecord
 
   STORE_OPTIONS = [ "NetOnNet", "Sportamore", "Cdon" ]
 
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   private
 
   def scrape_product_price_1

@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_admin!, only: [:index, :new, :create, :edit, :update]
 
   def show
-    @product = Product.find(params[:id])
+    @product = Product.friendly.find(params[:id])
     add_breadcrumb 'Hem', :root_path
     add_breadcrumb "#{@product.primary_category.name}", category_path(@product.primary_category)
     add_breadcrumb "#{@product.brand.name}", brand_path(@product.brand)
@@ -31,11 +31,25 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
+    @product = Product.find_by_slug(params[:id])
+
   end
 
   def update
-    @product = Product.find(params[:id])
+    @categories = Category.all
+    @product = Product.find_by_slug(params[:id])
+    if @product.primary_category_id?
+      @primary_category = @categories.find_by_id(@product.primary_category_id)
+      @product.primary_category_name = @primary_category.slug
+    end
+    if @product.secondary_category_id?
+      @secondary_category = @categories.find_by_id(@product.secondary_category_id)
+      @product.secondary_category_name = @secondary_category.slug
+    end
+    if @product.third_category_id?
+      @third_category = @categories.find_by_id(@product.third_category_id)
+      @product.third_category_name = @third_category.slug
+    end
     respond_to do |format|
       if @product.update product_params
         format.html { redirect_to edit_product_path(@product), notice: 'Product edited!' }
@@ -48,7 +62,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find(params[:id])
+    @product = Product.find_by_slug(params[:id])
     if @product.destroy
       flash[:notice] = "Product deleted"
       redirect_back(fallback_location: root_path)

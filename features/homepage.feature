@@ -8,8 +8,8 @@ Feature: Homepage
       | id | name        | description    |
       | 1  | Garmin      | Denna Garmin.. |
     Given the following products exists
-      | id | name                  | brand_id | active | primary_category_id |
-      | 1  | Garmin Forerunner 235 | 1        | true   | 1                   |
+      | id | name                  | brand_id | active | primary_category_id | primary_category_name |
+      | 1  | Garmin Forerunner 235 | 1        | true   | 1                   | pulsklockor           |
 
   Scenario: I visit the homepage and see some content
     Given I am on the homepage

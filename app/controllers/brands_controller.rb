@@ -2,8 +2,8 @@ class BrandsController < ApplicationController
   before_action :authenticate_admin!, only: [:index, :new, :create, :edit, :update]
 
   def show
-    @brand = Brand.find(params[:id])
-    @products = @brand.products.active.with_attached_avatar
+    @brand = Brand.friendly.find(params[:id])
+    @products = @brand.products.with_attached_avatar.active
     add_breadcrumb 'Hem', :root_path
     add_breadcrumb "#{@brand.name}"
   end
@@ -30,11 +30,11 @@ class BrandsController < ApplicationController
   end
 
   def edit
-    @brand = Brand.find(params[:id])
+    @brand = Brand.find_by_slug(params[:id])
   end
 
   def update
-    @brand = Brand.find(params[:id])
+    @brand = Brand.find_by_slug(params[:id])
     respond_to do |format|
       if @brand.update brand_params
         format.html { redirect_to edit_brand_path(@brand), notice: 'Brand edited!' }
@@ -47,7 +47,7 @@ class BrandsController < ApplicationController
   end
 
   def destroy
-    @brand = Brand.find(params[:id])
+    @brand = Brand.find_by_slug(params[:id])
     if @brand.destroy
       flash[:notice] = "Brand deleted"
       redirect_back(fallback_location: root_path)

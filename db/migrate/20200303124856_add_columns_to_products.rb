@@ -42,5 +42,9 @@ class AddColumnsToProducts < ActiveRecord::Migration[6.0]
     add_column :products, :store_3_link, :text
     add_column :products, :store_3_price, :float
     add_column :products, :active, :boolean, default: false
+
+    add_column :products, :primary_category_name, :text
+    add_column :products, :secondary_category_name, :text
+    add_column :products, :third_category_name, :text
   end
 end

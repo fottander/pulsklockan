@@ -14,6 +14,7 @@ gem 'devise'
 gem "aws-sdk-s3", require: false
 gem 'nokogiri'
 gem "breadcrumbs_on_rails"
+gem 'friendly_id', '~> 5.4.0'
 
 group :development, :test do
   gem 'pry-byebug'

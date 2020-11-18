@@ -5,4 +5,7 @@ class Category < ApplicationRecord
   has_many :secondary_category_category, class_name: 'Product', foreign_key: 'secondary_category_id'
   has_many :third_category_category, class_name: 'Product', foreign_key: 'third_category_id'
   has_one_attached :avatar
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 end

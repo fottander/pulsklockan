@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_01_180155) do
+ActiveRecord::Schema.define(version: 2020_11_18_123008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 2020_07_01_180155) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
     t.text "extra_info"
+    t.string "slug"
+    t.index ["slug"], name: "index_brands_on_slug", unique: true
   end
 
   create_table "categories", force: :cascade do |t|
@@ -66,6 +68,19 @@ ActiveRecord::Schema.define(version: 2020_07_01_180155) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
+    t.string "slug"
+    t.index ["slug"], name: "index_categories_on_slug", unique: true
+  end
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -111,12 +126,17 @@ ActiveRecord::Schema.define(version: 2020_07_01_180155) do
     t.text "store_3_link"
     t.float "store_3_price"
     t.boolean "active", default: false
+    t.text "primary_category_name"
+    t.text "secondary_category_name"
+    t.text "third_category_name"
     t.bigint "primary_category_id"
     t.bigint "secondary_category_id"
     t.bigint "third_category_id"
+    t.string "slug"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["primary_category_id"], name: "index_products_on_primary_category_id"
     t.index ["secondary_category_id"], name: "index_products_on_secondary_category_id"
+    t.index ["slug"], name: "index_products_on_slug", unique: true
     t.index ["third_category_id"], name: "index_products_on_third_category_id"
   end
 
