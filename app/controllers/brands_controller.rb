@@ -3,6 +3,7 @@ class BrandsController < ApplicationController
 
   def show
     @brand = Brand.friendly.find(params[:id])
+    @brands = Brand.all_except(@brand)
     @products = @brand.products.with_attached_avatar.active
     add_breadcrumb 'Hem', :root_path
     add_breadcrumb "#{@brand.name}"
