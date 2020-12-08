@@ -8,12 +8,15 @@
     <p>Här hittar du <%= @products.count %> av nätets mest populära <%= @brand.name %> produkter.</p>
     <%= image_tag(@brand.avatar, width: 200) if @brand.avatar.attached? %>
   </div>
+  <div class="filter-holder">
+    <span style="font-weight: 500;">Varumärken</span>
   <div class="filter-column">
     <%= link_to "#{@brand.name}", "#{@brand.name}", class: 'reply-button' %>
     <% @brands.each do |brand| %>
       <%= link_to "#{brand.name}", "#{brand.name}", class: 'cancel-button' %>
     <% end %>
   </div>
+</div>
 </div>
 <div class='products-container'>
   <%= render 'products/products' %>
