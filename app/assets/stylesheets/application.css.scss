@@ -66,6 +66,30 @@ a:visited {
 
 /* Breadcrumbs */
 
+  .breadcrumb-holder-2 {
+    color: #B1B1B1;
+    font-size: 0.9rem;
+    font-family: 'Montserrat',Arial,sans-serif;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  @media screen and (max-width: 54.9375em) {
+    .breadcrumb-holder-2 {
+      margin-top: 0em;
+    }
+  }
+
+  .breadcrumb-holder-2 a {
+    color: #B1B1B1;
+    text-decoration: none;
+  }
+
+  .breadcrumb-holder-2 a:visited {
+    color: #B1B1B1;
+    text-decoration: none;
+  }
+
  .breadcrumb-holder {
    color: #B1B1B1;
    font-size: 0.9rem;
@@ -346,6 +370,36 @@ transform: rotate(90deg);
   }
 }
 
+/* CATEGORY AND BRAND CONTAINER */
+
+.category-brand-container {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5em;
+}
+
+.category-brand-container h1 {
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+@media screen and (max-width: 49.9375em) {
+  .category-brand-container {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    line-height: 1.2em;
+  }
+}
+
+@media screen and (max-width: 39.9375em) {
+  .category-brand-container p {
+    font-size: 0.8em;
+  }
+}
+
 /* PRODUCTS CONTAINER */
 
 .products-container {
@@ -421,133 +475,7 @@ transform: rotate(90deg);
   max-height: 245px;
 }
 
-/* ITEM CONTAINER */
-
-.item-container {
-
-}
-
-.item-container .item-box {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}
-
-/* FOOTER */
-
-.footer {
-  display: block;
-  background-color: #15213b;
-  color: white;
-}
-
-.footer-grid {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.footer-container {
-  padding: 2em 2em 2em 2em;
-  text-align: center;
-}
-
-/* FOOTER MEDIASCREEN MAX 39.9375 */
-
-@media screen and (max-width: 39.9375em) {
-  .footer-grid {
-    flex-direction: column;
-  }
-
-  .footer-grid .footer-container {
-    padding: 1em 1em 1em 1em;
-  }
-}
-
-/* BUTTONS */
-
-.button-menu {
-  margin: 1em 1em 1em 1em;
-}
-
-.add-button {
-   background: #3db5e6;
-   color: #fff;
-   display: inline-block;
-   text-align: center;
-   line-height: 1;
-   font-size: 0.8rem;
-   font-family: 'Montserrat',Arial,sans-serif;
-   font-weight: 700;
-   letter-spacing: 0.5px;
-   padding: 0.4rem 0.6rem 0.4rem;
-   border-radius: 4px;
-   border: none;
-   text-decoration: none;
- }
-
- .reply-button {
-  background: #f77d0e;
-  color: #fff;
-  display: inline-block;
-  text-align: center;
-  line-height: 1;
-  font-size: 0.8rem;
-  font-family: 'Montserrat',Arial,sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  padding: 0.4rem 0.6rem 0.4rem;
-  border-radius: 4px;
-  border: none;
-  text-decoration: none;
-}
-
- .cancel-button {
-  border: 1px solid #ddd;
-  color: #525252;
-  background-color: #fefefe;
-  text-align: center;
-  line-height: 1;
-  font-size: 0.8rem;
-  font-family: 'Montserrat',Arial,sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  padding: 0.4rem 0.6rem 0.4rem;
-  border-radius: 4px;
-  text-decoration: none;
-}
-
-/* standard form */
-
-.standard-form {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.standard-form-comment {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.hidden-label {
-  color: #cacaca;
-  font-size: 16px;
-}
-
-.form-text {
-  color: #0a0a0a;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.form-text-grey {
-  color: #6D6D6D;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-/* Product views */
+/* PRODUCT VIEWS */
 
 .product-holder {
   display: flex;
@@ -683,4 +611,130 @@ transform: rotate(90deg);
   .specs-table-white {
     width: 20em;
   }
+}
+
+/* ITEM CONTAINER */
+
+.item-container {
+
+}
+
+.item-container .item-box {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* FOOTER */
+
+.footer {
+  display: block;
+  background-color: #15213b;
+  color: white;
+}
+
+.footer-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footer-container {
+  padding: 2em 2em 2em 2em;
+  text-align: center;
+}
+
+/* FOOTER MEDIASCREEN MAX 39.9375 */
+
+@media screen and (max-width: 39.9375em) {
+  .footer-grid {
+    flex-direction: column;
+  }
+
+  .footer-grid .footer-container {
+    padding: 1em 1em 1em 1em;
+  }
+}
+
+/* BUTTONS */
+
+.button-menu {
+  margin: 1em 1em 1em 1em;
+}
+
+.add-button {
+   background: #3db5e6;
+   color: #fff;
+   display: inline-block;
+   text-align: center;
+   line-height: 1;
+   font-size: 0.8rem;
+   font-family: 'Montserrat',Arial,sans-serif;
+   font-weight: 700;
+   letter-spacing: 0.5px;
+   padding: 0.4rem 0.6rem 0.4rem;
+   border-radius: 4px;
+   border: none;
+   text-decoration: none;
+ }
+
+ .reply-button {
+  background: #f77d0e;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  line-height: 1;
+  font-size: 0.8rem;
+  font-family: 'Montserrat',Arial,sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 0.4rem 0.6rem 0.4rem;
+  border-radius: 4px;
+  border: none;
+  text-decoration: none;
+}
+
+ .cancel-button {
+  border: 1px solid #ddd;
+  color: #525252;
+  background-color: #fefefe;
+  text-align: center;
+  line-height: 1;
+  font-size: 0.8rem;
+  font-family: 'Montserrat',Arial,sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 0.4rem 0.6rem 0.4rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+/* standard form */
+
+.standard-form {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.standard-form-comment {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.hidden-label {
+  color: #cacaca;
+  font-size: 16px;
+}
+
+.form-text {
+  color: #0a0a0a;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.form-text-grey {
+  color: #6D6D6D;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
 }
