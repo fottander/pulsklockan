@@ -2,16 +2,18 @@
    <%= render_breadcrumbs separator: ' > ' %>
 </div>
 <div class="category-brand-container">
-  <h1>Alla <%= @brand.name %> produkter</h1>
-  <p><%= @brand.description %></p>
-  <p>Här hittar du <%= @products.count %> av nätets mest populära <%= @brand.name %> produkter.</p>
-  <%= image_tag(@brand.avatar, width: 200) if @brand.avatar.attached? %>
-</div>
-<div class="filter-column">
-  <%= link_to "#{@brand.name}", "#{@brand.name}", class: 'reply-button' %>
-  <% @brands.each do |brand| %>
-    <%= link_to "#{brand.name}", "#{brand.name}", class: 'cancel-button' %>
-  <% end %>
+  <div class="description-holder">
+    <h1>Alla <%= @brand.name %> produkter</h1>
+    <p><%= @brand.description %></p>
+    <p>Här hittar du <%= @products.count %> av nätets mest populära <%= @brand.name %> produkter.</p>
+    <%= image_tag(@brand.avatar, width: 200) if @brand.avatar.attached? %>
+  </div>
+  <div class="filter-column">
+    <%= link_to "#{@brand.name}", "#{@brand.name}", class: 'reply-button' %>
+    <% @brands.each do |brand| %>
+      <%= link_to "#{brand.name}", "#{brand.name}", class: 'cancel-button' %>
+    <% end %>
+  </div>
 </div>
 <div class='products-container'>
   <%= render 'products/products' %>

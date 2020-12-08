@@ -22,7 +22,7 @@
 body {
   margin: 0px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: 300;
   background-color: #f9f9f9;
 }
@@ -186,6 +186,7 @@ a:visited {
   display: inline;
   float: right;
   font-size: 0.8em;
+  letter-spacing: 0.8px;
   font-weight: 500;
 }
 
@@ -379,8 +380,8 @@ transform: rotate(90deg);
   padding: 1em 1em 1em 1em;
   margin-left: 1em;
   margin-right: 1em;
-  justify-content: space-between;
-  background-color: white;
+  justify-content: flex-start;
+
 }
 
 @media screen and (max-width: 39.9375em) {
@@ -392,7 +393,6 @@ transform: rotate(90deg);
     margin-left: 0em;
     margin-right: 0em;
     justify-content: center;
-    background-color: white;
   }
 }
 
@@ -400,10 +400,13 @@ transform: rotate(90deg);
 /* CATEGORY AND BRAND CONTAINER */
 
 .category-brand-container {
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   line-height: 1.5em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .category-brand-container h1 {
@@ -414,7 +417,7 @@ transform: rotate(90deg);
 
 @media screen and (max-width: 49.9375em) {
   .category-brand-container {
-    width: 100%;
+    flex-direction: column;
     margin-left: 0;
     margin-right: 0;
     line-height: 1.2em;
@@ -424,6 +427,16 @@ transform: rotate(90deg);
 @media screen and (max-width: 39.9375em) {
   .category-brand-container p {
     font-size: 0.8em;
+  }
+}
+
+.description-holder {
+  max-width: 65%;
+}
+
+@media screen and (max-width: 64.9375em) {
+  .description-holder {
+    max-width: 100%;
   }
 }
 
@@ -708,16 +721,16 @@ transform: rotate(90deg);
    border: 1px solid #fd5f53;
    background-color: #fd5f53;
    color: white;
-   font-weight: 600;
+   font-weight: 550;
    text-decoration: none;
-   width: 8em;
+   width: 7.5em;
    text-align: center;
    display: flex;
    align-items: center;
    justify-content: center;
    padding: 0.5rem 0rem 0.5rem 0rem;
    margin: 0.1rem 0.1rem 0.1rem 0.1rem;
-   border-radius: 30px;
+   border-radius: 10px;
 }
 
 @media screen and (max-width: 39.9375em) {
@@ -735,23 +748,23 @@ transform: rotate(90deg);
     justify-content: center;
     padding: 0.4rem 0rem 0.4rem 0rem;
     margin: 0.1rem 0.1rem 0.1rem 0.1rem;
-    border-radius: 30px;
+    border-radius: 10px;
   }
 }
 
  .cancel-button {
    border: 1px solid #fd5f53;
    color: #fd5f53;
-   font-weight: 600;
+   font-weight: 550;
    text-decoration: none;
-   width: 8em;
+   width: 7.5em;
    text-align: center;
    display: flex;
    align-items: center;
    justify-content: center;
    padding: 0.5rem 0rem 0.5rem 0rem;
    margin: 0.1rem 0.1rem 0.1rem 0.1rem;
-   border-radius: 30px;
+   border-radius: 10px;
 }
 
 @media screen and (max-width: 39.9375em) {
@@ -768,7 +781,7 @@ transform: rotate(90deg);
     justify-content: center;
     padding: 0.4rem 0rem 0.4rem 0rem;
     margin: 0.1rem 0.1rem 0.1rem 0.1rem;
-    border-radius: 30px;
+    border-radius: 10px;
   }
 }
 
