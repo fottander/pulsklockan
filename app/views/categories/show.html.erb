@@ -2,11 +2,22 @@
    <%= render_breadcrumbs separator: ' > ' %>
 </div>
 <div class="category-brand-container">
-  <h1>Alla <%= @category.try(:name) %></h1>
-  <p><%= @category.description %></p>
-  <p>Just nu hittar du <%= @products.count %> av marknadens mest populära <span style='text-transform: lowercase;'><%= @category.name %></span>.</p>
-  <%= image_tag(@category.avatar, width: 200) if @category.avatar.attached? %>
+  <div class="description-holder">
+    <h1>Alla <%= @category.try(:name) %></h1>
+    <p><%= @category.description %></p>
+    <p>Just nu hittar du <%= @products.count %> av marknadens mest populära <span style='text-transform: lowercase;'><%= @category.name %></span>.</p>
+    <%= image_tag(@category.avatar, width: 200) if @category.avatar.attached? %>
+  </div>
+  <div class="filter-holder">
+    <span style="font-weight: 500;">Varumärken</span>
+    <div class="filter-column">
+      <% @brands.each do |brand| %>
+        <%= link_to "#{brand.name}", "#{brand.name}", class: 'cancel-button' %>
+      <% end %>
+    </div>
+  </div>
 </div>
+
 <div class='products-container'>
   <%= render 'products/products' %>
 </div>

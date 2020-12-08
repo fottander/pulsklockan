@@ -2,6 +2,7 @@ class CategoriesController < ApplicationController
   before_action :authenticate_admin!, only: [:index, :new, :create, :edit, :update]
 
   def show
+    @brands = Brand.all
     @category = Category.friendly.find(params[:id])
     @products = Product.with_attached_avatar.active.where("primary_category_name = ? OR secondary_category_name = ? OR third_category_name = ?", params[:id], params[:id], params[:id])
     add_breadcrumb 'Hem', :root_path

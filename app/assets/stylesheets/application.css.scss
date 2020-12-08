@@ -373,11 +373,15 @@ transform: rotate(90deg);
 
 /* FILTER COLUMN */
 
+.filter-holder {
+  width: 255px;
+  text-align: center;
+}
+
 .filter-column {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  padding: 1em 1em 1em 1em;
   margin-left: 1em;
   margin-right: 1em;
   justify-content: flex-start;
@@ -389,7 +393,6 @@ transform: rotate(90deg);
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    padding: 1em 1em 1em 1em;
     margin-left: 0em;
     margin-right: 0em;
     justify-content: center;
