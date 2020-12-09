@@ -28,8 +28,14 @@ body {
 }
 
 h1 {
-  font-weight: 400;
+  font-weight: 500;
   color: #15213b;
+  display: inline-block;
+  transform: scale(1, 1.15);
+  -webkit-transform: scale(1, 1.15); /* Safari and Chrome */
+  -moz-transform: scale(1, 1.15); /* Firefox */
+  -ms-transform: scale(1, 1.15); /* IE 9+ */
+  -o-transform: scale(1, 1.15); /* Opera */
 }
 
 @media screen and (max-width: 39.9375em) {
@@ -368,6 +374,81 @@ transform: rotate(90deg);
   .container-main .header-main .header-right .header-img3 {
     height: 5em;
     padding: 0em 1em 0em 1em;
+  }
+}
+
+/* DIVIDER */
+
+.divider-main {
+
+
+}
+
+.brand-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-top: 1rem;
+  justify-content: center;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .brand-container {
+
+  }
+}
+
+.brand-container .brand-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+  margin-left: 1em;
+  margin-right: 1em;
+  background-color: white;
+  width: 250px;
+  height: 250px;
+}
+
+@media screen and (max-width: 49.9375em) {
+  .brand-container .brand-card {
+    width: 140px;
+    height: 170px;
+    margin-left: 0em;
+    margin-right: 0.5em;
+  }
+}
+
+.brand-container .brand-card .brand-header {
+  margin-top: -1em;
+}
+
+.brand-container .brand-card .brand-header h4 {
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 49.9375em) {
+  .brand-container .brand-card .brand-header {
+    font-size: 1em;
+  }
+}
+
+.brand-container .brand-card .card-brand-image {
+  display: flex;
+  align-items: center;
+  margin-top: -1em;
+}
+
+.brand-container .brand-card .card-brand-image img {
+  max-width: 220px;
+  max-height: 220px;
+}
+
+@media screen and (max-width: 49.9375em) {
+  .brand-container .brand-card .card-brand-image img {
+    max-width: 130px;
+    max-height: 130px;
   }
 }
 

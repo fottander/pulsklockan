@@ -1,21 +1,38 @@
 <div class='header-main'>
   <div class='header-left'>
     <h1>Alla pulsklockor, aktivitetsarmband och smartklockor på ett och samma ställe</h1>
-    <% @categories.each do |category| %>
-      Kategori: <%= link_to "Alla #{category.name}", category_path(category) %> Id: <%= category.id %> <br>
-    <% end %>
-    <br />
-    <% @brands.each do |brand| %>
-      Märke: <%= link_to "Alla #{brand.name}", "#{brand.name}" %> Id: <%= brand.id %><br />
-    <% end %>
-    <br />
-    <% @products.each do |product| %>
-      Produkt: <%= link_to "Alla #{product.name}", product_path(product) %> Id: <%= product.id %><br />
-    <% end %>
+    <p>På Pulsklockan hjälper vi dig med allt som har med smarta klockor, aktivitetsarmband och pulsklockor att göra. Vi jämför produkter och hjälper dig att hitta det bästa priset från de bästa butikerna online.</p>
+    <ul>
+      <li>Opartisk aktör</li>
+      <li>Alltid bästa pris</li>
+      <li>Uppdateras frekvent</li>
+    </ul>
   </div>
   <div class='header-right'>
     <%= image_tag 'pulsklocka1.png', alt: 'Pulsklocka', class: 'header-img1' %>
     <%= image_tag 'aktivitetsarmband1.png', alt: 'Aktivitetsarmband', class: 'header-img2' %>
     <%= image_tag 'smartklocka1.png', alt: 'Smartklocka', class: 'header-img3' %>
+  </div>
+</div>
+<div class="divider-main">
+  <h2>Populära varumärken just nu</h2>
+  <p>Vi försöker ge dig som besökare all den information du behöver innan du ska göra ett köp. Här nedanför hittar du de mest populära varumärkena. Det finns fem utmärkande tillverkare av pulsklockor, aktivitetsarmband och smartklockor och de är Garmin, Fitbit, Suunto, Polar och Apple. Klicka vidare för att produkterna.</p>
+  <div class='brand-container'>
+    <% @brands.each do |brand| %>
+      <% cache brand do %>
+        <div id='brand-<%= brand.id %>'>
+          <%= link_to brand_path(brand) do %>
+          <div class='brand-card'>
+            <div class='brand-header'>
+              <h4><%= brand.name %></h4>
+            </div>
+            <div class='card-brand-image'>
+              <%= image_tag(brand.avatar, alt: "#{brand.name}") if brand.avatar.attached? %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
