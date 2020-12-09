@@ -22,20 +22,23 @@
 body {
   margin: 0px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.9em;
-  font-weight: 300;
+  font-size: 1em;
+  letter-spacing: 0.5px;
+  font-weight: 400;
   background-color: #f9f9f9;
+  color: #363636;
 }
 
 h1 {
   font-weight: 500;
-  color: #15213b;
+  letter-spacing: 1px;
+  color: #1A294A;
   display: inline-block;
-  transform: scale(1, 1.15);
-  -webkit-transform: scale(1, 1.15); /* Safari and Chrome */
-  -moz-transform: scale(1, 1.15); /* Firefox */
-  -ms-transform: scale(1, 1.15); /* IE 9+ */
-  -o-transform: scale(1, 1.15); /* Opera */
+  transform: scale(1, 1.1);
+  -webkit-transform: scale(1, 1.1); /* Safari and Chrome */
+  -moz-transform: scale(1, 1.1); /* Firefox */
+  -ms-transform: scale(1, 1.1); /* IE 9+ */
+  -o-transform: scale(1, 1.1); /* Opera */
 }
 
 @media screen and (max-width: 39.9375em) {
@@ -46,7 +49,7 @@ h1 {
 
 h2 {
   font-weight: 400;
-  color: #15213b;
+  color: #1A294A;
 }
 
 @media screen and (max-width: 39.9375em) {
@@ -57,11 +60,22 @@ h2 {
 
 h3 {
   font-weight: 400;
-  color: #15213b;
+  color: #1A294A;
 }
 
 @media screen and (max-width: 39.9375em) {
   h3 {
+    font-size: 1.2em;
+  }
+}
+
+h4 {
+  font-weight: 400;
+  color: #1A294A;
+}
+
+@media screen and (max-width: 39.9375em) {
+  h4 {
     font-size: 1.2em;
   }
 }
@@ -171,6 +185,7 @@ a:visited {
   width: 100%;
   background-color: #fff;
   position: relative;
+  box-shadow: 0 5px 14px 2px rgba(0,0,0,.07);
 }
 
 .nav > .nav-header {
@@ -317,6 +332,42 @@ a:visited {
   padding: 1em 1em 1em 1em;
 }
 
+@media screen and (max-width: 39.9375em) {
+  .container-main .header-main {
+    padding: 0.1em 0.1em 0.1em 0.1em;
+    }
+  }
+
+.line {
+  border-bottom: 6px solid #fd5f53;
+  width: 400px;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .line {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    }
+  }
+
+  @media screen and (min-width: 39.9375em) and (max-width: 59.9375em) {
+    .line {
+      width: 200px;
+    }
+  }
+
+.line-2 {
+  border-bottom: 6px solid #fd5f53;
+  width: 400px;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .line-2 {
+    width: 200px;
+    }
+  }
+
 .container-main .header-main .header-left {
   width: 60%;
 }
@@ -380,7 +431,6 @@ transform: rotate(90deg);
 /* DIVIDER */
 
 .divider-main {
-
 
 }
 
@@ -465,11 +515,11 @@ transform: rotate(90deg);
   flex-direction: row;
   margin-left: 1em;
   margin-right: 1em;
-  justify-content: flex-start;
+  justify-content: space-around;
 
 }
 
-@media screen and (max-width: 39.9375em) {
+@media screen and (max-width: 49.9375em) {
   .filter-column {
     display: flex;
     flex-wrap: wrap;

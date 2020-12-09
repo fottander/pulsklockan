@@ -4,6 +4,7 @@
 <div class="category-brand-container">
   <div class="description-holder">
     <h1>Alla <%= @brand.name %> produkter</h1>
+    <div class="line-2"></div>
     <p><%= @brand.description %></p>
     <p>Här hittar du <%= @products.count %> av nätets mest populära <%= @brand.name %> produkter.</p>
     <%= image_tag(@brand.avatar, width: 200) if @brand.avatar.attached? %>
