@@ -7,7 +7,6 @@
     <div class="line-2"></div>
     <p><%= @category.description %></p>
     <p>Just nu hittar du <%= @products.count %> av marknadens mest populära <span style='text-transform: lowercase;'><%= @category.name %></span>.</p>
-    <%= image_tag(@category.avatar, width: 200) if @category.avatar.attached? %>
   </div>
   <div class="filter-holder">
     <span style="font-weight: 500;">Varumärken</span>

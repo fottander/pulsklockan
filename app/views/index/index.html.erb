@@ -22,7 +22,7 @@
     <% @brands.each do |brand| %>
       <% cache brand do %>
         <div id='brand-<%= brand.id %>'>
-          <%= link_to brand_path(brand) do %>
+          <%= link_to "#{brand.name}" do %>
           <div class='brand-card'>
             <div class='brand-header'>
               <h4><%= brand.name %></h4>
