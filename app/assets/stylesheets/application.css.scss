@@ -29,6 +29,12 @@ body {
   color: #363636;
 }
 
+@media screen and (max-width: 39.9375em) {
+  body {
+    font-size: 0.9em;
+  }
+}
+
 h1 {
   font-weight: 500;
   letter-spacing: 1px;
@@ -372,6 +378,38 @@ a:visited {
   width: 60%;
 }
 
+.header-left ul li {
+  list-style-type: none!important;
+  margin-bottom: 0.5em;
+}
+
+.header-left ul li:before {
+  content: ' \2714'!important;
+    margin-left: -30px!important;
+    float: left!important;
+    background: #5e9639!important;
+    padding: 0!important;
+    height: 20px!important;
+    width: 20px!important;
+    line-height: 21px!important;
+    text-align: center!important;
+    color: #fff!important;
+    font-weight: 700!important;
+    font-size: 10px!important;
+    border-radius: 26px!important;
+    text-shadow: none!important;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .header-left ul {
+    width: 200px;
+    position: relative;
+    margin-left: auto;
+    right: 10px;
+    margin-right: auto;
+    }
+  }
+
 .container-main .header-main .header-right {
 }
 
@@ -434,18 +472,18 @@ transform: rotate(90deg);
 
 }
 
+@media screen and (max-width: 39.9375em) {
+  .divider-main p {
+    font-size: 0.8em;
+  }
+}
+
 .brand-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   padding-top: 1rem;
   justify-content: center;
-}
-
-@media screen and (max-width: 39.9375em) {
-  .brand-container {
-
-  }
 }
 
 .brand-container .brand-card {
@@ -764,6 +802,12 @@ transform: rotate(90deg);
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .specs-holder {
+    justify-content: center;
+  }
 }
 
 .specs-table {
