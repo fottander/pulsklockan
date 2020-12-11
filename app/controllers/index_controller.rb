@@ -1,6 +1,6 @@
 class IndexController < ApplicationController
   def index
-    @categories = Category.all
+    @categories = Category.first(5)
     @brands = Brand.all
     @products = Product.all
   end

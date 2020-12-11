@@ -37,3 +37,112 @@
     <% end %>
   </div>
 </div>
+<div class="divider-main">
+  <h2>Populära kategorier just nu</h2>
+  <p>Det finns flera olika kategorier vi samlar. Nedanför kan du klicka in på kategorierna direkt och söka efter den produkt du letar efter.</p>
+  <p>Vi har kategorier som aktivitetsarmband, vanliga pulsklockor, smarta klockor, pulsmätare för Iphone och självklart bäst i test. Här kan du hitta alla produkter som säljs online hos de största butikerna.</p>
+  <div class='brand-container'>
+    <% @categories.each do |category| %>
+      <% cache category do %>
+        <div id='category-<%= category.id %>'>
+          <%= link_to "#{category.name}" do %>
+          <div class='brand-card'>
+            <div class='brand-header'>
+              <h4><%= category.name %></h4>
+            </div>
+            <div class='card-brand-image'>
+              <%= image_tag(category.avatar, alt: "#{category.name}") if category.avatar.attached? %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="divider-main">
+  <h2>Söker du efter en produkt med eller utan Gps eller ett pulsband?</h2>
+  <p>Vi har samlat lite information om hur du ska tänka när du ska välja produkt. Man kan välja enklare alternativ som mäter de mest basala delarna lite liknande som en hälsoapp men de kan också mäta din puls på ett effektivt sätt. Detta kan vara en bra modell om du inte vill ha en klumpig pulsklocka eller aktivitetsarmband. Sedan finns det mer avancerade produkter som ger dig all möjlig information. Detta kan vara bra för dig som arbetar med din kropp och kräver mer extrema modeller eller för dig som är proffessionell utövare och därmed vill mäta din puls eller ha koll på din löpning och träning med precision. Det finns tre olika kategorier som du kan utvärdera. Allt beror på dina behov och till viss del vilket pris du vill betala.</p>
+  <div class="divider-container">
+    <div class="divider-card">
+      <div class="divider-header"><h3>Pulskockor med GPS</h3></div>
+      <p>Ska du ha det bästa inom segmentet så ska du köpa en pulsklocka med GPS. Alltså funktionen som gör att du kan se exakt på en karta vart du sprungit. Man kan numera få exakt data över var du sprungit på de kartprogram som tillverkaren använder sig av, som t.ex. google maps. Det finns många olika produkter som man kan köpa inom denna kategori och vi ska gå igenom några viktiga saker du ska tänka på när du införskaffar en träningsklocka med GPS. Som ofta spelar priset såklart in på kvalitet och funktionalitet hos klockorna. Det finns en tillverkare som sticker ut lite mer än de andra och det är Garmin. De ligger bäst i tester som görs av oberoende testare. De är nämligen experter på GPS teknologi. Deras produkter används både i bilar och båtar och därför har de en väl utvecklad teknologi som fungerar utmärkt i till och med så små produkter som pulsklockor. En riktigt bra produkt från Garmin är Forerunner serien.</p>
+      <p>Vi vill också tipsa om Suunto klockor inom detta segment. Deras pulsklocka med GPS är helt klart godkänd och håller samma kvalitet som Garmins produkter. Deras modeller är snyggt designade med en känsla av Finland. Märket kommer just från vårt grannland i öst.</p>
+      <p>Självklart kan vi inte ha denna sajt utan att presentera Apple watch. Apple är en nykomling på marknaden men som med allt dom gör så gör dom det rätt från början. Deras senaste produkter är utan tvekan de bästa som finns just nu. Alltid inbyggd Gps som enkelt kan koppla upp till kockan och mobilen. Enkelheten, designen och funktionaliteten gör deras smarta klockor till några av de bästa just nu.</p>
+    </div>
+    <div class="divider-card">
+      <div class="divider-header"><h3>Pulskockor utan GPS</h3></div>
+      <p>I denna kategori finns de allra flesta modellerna och deras prisklasser skiljer sig därefter. En uppsjö av tillverkare finns på marknaden och vi kommer därför gå igenom de mest populära pulsklockorna utan GPS. Alla fyra stora tillverkare Garmin, Suunto, Polar och Fitbit har enklare modeller utan GPS. En pulsklocka utan GPS drar inte lika mycket batteri som en med och är då en tillräckligt bra produkt för dig som inte önskar denna funktion. Det finns däremot massor av andra roliga funktioner som är välbehövliga. Att hitta och testa en produkt för att se vad som är bäst för dig är viktigt. Först tänkte vi tipsa om Fitbit som är en stor uppstickare på den amerikanska marknaden. De har därmed blivit väldigt populära över hela världen.</p>
+      <p>Sedan har vi Polar som producerar enklare modeller som mest är till för träning. De har sedan början varit ett av de mest populära märkena. Polar klockor har väldigt bra pris och passar perfekt för dig som inte söker efter något med Gps utan en helt vanlig pulsklocka som fungerar riktigt bra när du tränar.</p>
+      <p>Vi har även i denna kategorin Suunto och Garmin klockor som är väldesignade och utformade för att ha en enkel visning och bra funktioner. Till några av modellerna finns det GPS att köpa till om man sedan skulle önska detta. </p>
+    </div>
+    <div class="divider-card">
+      <div class="divider-header"><h3>Pulsmätare/Band (iphone)</h3></div>
+      <p>Detta är en kategori som växer oerhört snabbt. Många vill köpa enkla pulsband eller pulsmätare som de sätter på kroppen och vill få sin data i mobilen. Man kan få den antingen i sin iphone eller android telefon. Det finns både enklare mätare som är mer som aktivitetsband som du fäster på handleden eller band som fästs på bröstet som har lite mer avancerade funktioner. Dessa band får oftast bäst i test just för att de kan mäta så precist runt bröstet. Fungerar också väldigt bra vid simning. Om du däremot är ute efter riktigt bra funktionalitet, kvalitet, prestanda och gps så rekommenderar vi att köpa en pulsklocka istället. Men här nedanför presenterar vi ett par produkter som vi känner är de bästa inom kategorin pulsmätare för iphone. </p>
+      <p>Genom de impulser som sker i din kropp när hjärtat slår, känner pulsklockor av dem och återger dem på den display som finns på klockan. En annan metod är att fästa ett band runt midjan och sedan koppla detta till antingen din iphone eller dator. Det finns många anledningar till att använda en träningsklocka. Den vanligaste är att atleter och motionärer vill mäta sina resultat av deras träning eller att man vill hålla koll på sin dagliga aktivitet, dvs antal steg eller sömncykel osv. De flesta pulsmätare som finns på marknaden online innehåller också ett datorprogram som gör att du enkelt får en visualisering av din träning och kan mäta dina resultat direkt i datorn eller iphone, detta ingår när du köper produkten. Det finns även hälsoanledningar kopplade till hjärtproblem. Vi vill hjälpa er besökare att hitta de bästa butikerna som säljer pulsmätare. På denna sida kommer vi visa upp massor av olika produkter, som gör att du enkelt kan få en översiktsbild av vad den svenska marknaden har att erbjuda. Om man som besökare går in på enskilda butiker får man en begränsad pris och produktbild, som vi vill komma ifrån. Pulsmätare har varit en oerhört populär produkt i många år. Den senaste träningstrenden och teknologivågen gör att fler och fler vill använda en klocka eller aktivitetsarmband. De butiker vi rekommenderar är endast stora återförsäljare och är alla medlemmar i svensk distanshandel eller trygg ehandel som gör att du kan känna dig helt säker när du handlar i deras shop.</p>
+      <p>Årets julklapp 2014 var ett aktivitetsarmband. Detta har vi självklart också om du tittar under fliken pulsmätare längst upp. Med ett sådant band håller du enkelt koll på din träning i vardagen. Fördelen med denna produkt är att den enkelt och smidigt fungerar i vardagen. Du håller koll på din träning och kan på så sätt motiveras att röra dig mer. Det mest omtyckta just nu är från Jawbone. Köp aktivitetsarmbandet redan idag. </p>
+      <p>Det är många som söker efter bäst i test när det kommer till våra pulsklockor. Det man ska tänka på är att tillverkarna inom denna kategori anpassar sitt utbud till marknaden som kanske inte alltid vill ha bäst i test, utan bäst anpassad för olika behov. Alltså säg att du ska köpa en pulsklocka men vill bara mäta din puls, sträcka, gps, aktivitet. Du vill ha de enklaste funktionerna. Då är det inte en bäst i test pulsklocka eller aktivitetsarmband som du är ute efter. Du vill inte ha massor med avancerade funktioner som bara krånglar till det för dig. Många just nu är egentligen bara ute efter att ha koll på sina steg under dagen eller kunna styra sin musik när du är ute och springer. Det krävs med andra ord egen research när du ska köpa ny klocka. Därför är denna webbplatsen så bra för dig. Du hittar enkelt de produkter som finns på marknaden och behöver inte tänka på var du får rea eller bästa priset för det har vi redan kollat upp åt dig. </p>
+    </div>
+    <div class="divider-card">
+      <div class="divider-header"><h3>Senaste från Bloggen</h3></div>
+      <div class="blog-post">
+        <div class="blog-header">
+          <h3><%= link_to "Ny användarvänlig design och massor av produkter", "/" %></h3>
+        </div>
+        <div class="blog-content">
+          <p>Pulsklockan.com har fått ny bättre design  Äntligen har sida uppdaterats för att ge dig som besökare den bästa upplevelsen när du ska hitta rätt klocka som mäter puls. Vi har gjort det så enkelt och smidigt som möjligt för att du ska kunna hitta alla produkter som finns tillgängliga på marknaden just nu. Alltid till...</p>
+          <%= link_to "Fortsätt läs ➝", "/" %>
+        </div>
+      </div>
+      <div class="blog-post">
+        <div class="blog-header">
+          <h3><%= link_to "Billigaste pulsklockorna", "/" %></h3>
+        </div>
+        <div class="blog-content">
+          <p>Hitta den billigaste pulsklockan här  Det är inte lätt att jämföra och hitta pulsklockor har vi märkt och det är därför denna sida skapades. Vill du hitta en billig pulsklocka så har du hittat rätt. Vi skriver om de flesta populära pulsklockorna och aktivitetsarmbanden som finns på marknaden och försöker ge dig som besökare så...</p>
+          <%= link_to "Fortsätt läs ➝", "/" %>
+        </div>
+      </div>
+      <div class="blog-post">
+        <div class="blog-header">
+          <h3><%= link_to "Nu ännu enklare att hitta den billigaste pulsklockan!", "/" %></h3>
+        </div>
+        <div class="blog-content">
+          <p>Vår nya design gör det ännu enklare för dig att hitta den bästa pulsklockan eller aktivitetsarmbandet till det lägsta priset.  Vi har gjort om pulsklockan.com och med mer information om de populäraste produkterna på marknaden kan du läsa och jämföra vilken modell som passar dig bäst. Vi har också gjort om sidan och navigationen så...</p>
+          <%= link_to "Fortsätt läs ➝", "/" %>
+        </div>
+      </div>
+      <div class="blog-post">
+        <div class="blog-header">
+          <h3><%= link_to "Aktivitetsarmband hett just nu", "/" %></h3>
+        </div>
+        <div class="blog-content">
+          <p>Det senaste inom träning Det senast inom träning är aktivitetsarmandet som funkar lika bra till vardaglig aktivitet. Man håller koll på sin motion och hur mycket man rör sig genom ett smidigt armband. Med detta kan du motivera dig själv att röra dig mer och samtidigt hitta den träning som ger dig bäst resultat. Klicka...</p>
+          <%= link_to "Fortsätt läs ➝", "/" %>
+        </div>
+      </div>
+      <div class="blog-post">
+        <div class="blog-header">
+          <h3><%= link_to "Nya pulsklockor i butikerna", "/" %></h3>
+        </div>
+        <div class="blog-content">
+          <p>Nu har det äntligen fyllts på med massor av nya pulsklockor i butikerna Vi har som alltid lagt upp alla de mest populära bland våra märken. Letar du efter en pulsklocka till bästa pris från antingen polar, suunto eller garmin så kolla i menyn till vänster för att hitta det du söker. Vi har också...</p>
+          <%= link_to "Fortsätt läs ➝", "/" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="divider-container">
+    <div class="divider-card">
+      <div class="divider-header"><h3>Olika namn på klockor som mäter puls</h3></div>
+      <p>Det finns en del olika benämningar på produkter som mäter puls:</p>
+      <ul>
+        <li>Pulsklocka</li>
+        <li>Löparklocka</li>
+        <li>Träningsklocka</li>
+        <li>Sportklocka</li>
+      </ul>
+      <p>Det är lite förvirrande men oavsett vad du söker efter så handlar det om samma sak. Självklart kan man skilja på ett band eller en klocka då det oftast skiljer sig i design samt funktionalitet. De mesta banden är mer till för sportaktiviter som simning eller löpning medan en klocka kan ha mycket fler funktioner. De är oftast större och självklart ser de ut som en klocka. Men de kan lämpa sig mer för friluftsaktiviter också. Du kan ha höjdmätare, Gps och med mera. På senare tid har aktivitetsarmband blivit en väldigt populär accessoar och det amerikanska företaget Fitbit är en pionjär inom design och försöker segmentera sig som en accessoar med funktionalitet. Om du kollar på t.ex. Garmin som tillverakr produkter utifrån deras utomstående teknologi. De är specialiserade på Gps teknologi och började som ett företag som tillverkar navigeringsprodukter och kommunikationsprodukter. Även Suunto har riktigt bra teknologi men började med orienteringsprodukter. Du kan nästan gissa vilket mrke du ska välja om detta är något du sysslar med. Deras Gps är precis lika bra som Garmins men till det ka du också ha en användarvänlig produkt så du snabbt kan få fram kartor om du springer och orienterar. Suunto är extremt användarvänlig och är ett perfekt val för dig som håller på med detta. Vill du kanske kunna kombinera klockan i vardagliga livet tillsammans med dina aktiviteter då borde du kolla in en Apple watch. Apple har segmenterat sig mer mot business sidan. Det ska vara enkelt att utföra sina jobbuppgifter på språng. Läsa mail, svara i telefon, lyssna på musik med mera. Du kan nästan helt skippa telefonen om du har en Apple. Dock finns det olika modeller. Vissa klarar inte av att ha ett abonnemang genom bara klockan då behöver du köpa den något dyrare varianten.</p>
+    </div>
+  </div>
+</div>
