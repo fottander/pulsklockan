@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :authenticate_admin!, only: [:index, :new, :create, :edit, :update]
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
     add_breadcrumb 'Hem', :root_path
     add_breadcrumb 'Blogg', '/blogg'
     add_breadcrumb "#{@article.title}"
@@ -37,11 +37,11 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
     respond_to do |format|
       if @article.update article_params
         format.html { redirect_to edit_article_path(@article), notice: 'Article edited!' }
@@ -54,7 +54,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
     if @article.destroy
       flash[:notice] = "Article deleted"
       redirect_back(fallback_location: root_path)
