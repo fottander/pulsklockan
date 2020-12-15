@@ -91,7 +91,7 @@
             <h3><%= link_to "#{article.title}", article_path(article) %></h3>
           </div>
           <div class="blog-content">
-            <p><%= article.content %></p>
+            <p><%= truncate(strip_tags(article.rich_text_content.to_s), length: 250) %></p>
             <%= link_to "Fortsätt läs ➝", article_path(article) %>
           </div>
         </div>
