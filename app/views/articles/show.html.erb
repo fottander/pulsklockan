@@ -1,0 +1,16 @@
+<div class='breadcrumb-holder-2'>
+   <%= render_breadcrumbs separator: ' > ' %>
+</div>
+<div class="category-brand-container">
+  <div class="description-holder">
+    <h1><%= @article.title %></h1>
+    <div class="line-2"></div>
+    <p><%= @article.content %></p>
+  </div>
+</div>
+<div style="text-align: center;">
+<h2>Andra inlägg</h2>
+<% @articles.each do |article| %>
+  <%= link_to "#{article.title}", article_path(article), style: 'text-decoration: none; color: black;' %><br><br>
+<% end %>
+</div>

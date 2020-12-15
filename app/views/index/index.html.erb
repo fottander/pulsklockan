@@ -85,51 +85,17 @@
     </div>
     <div class="divider-card">
       <div class="divider-header"><h3>Senaste från Bloggen</h3></div>
-      <div class="blog-post">
-        <div class="blog-header">
-          <h3><%= link_to "Ny användarvänlig design och massor av produkter", "/" %></h3>
+      <% @articles.each do |article| %>
+        <div class="blog-post">
+          <div class="blog-header">
+            <h3><%= link_to "#{article.title}", article_path(article) %></h3>
+          </div>
+          <div class="blog-content">
+            <p><%= article.content %></p>
+            <%= link_to "Fortsätt läs ➝", article_path(article) %>
+          </div>
         </div>
-        <div class="blog-content">
-          <p>Pulsklockan.com har fått ny bättre design  Äntligen har sida uppdaterats för att ge dig som besökare den bästa upplevelsen när du ska hitta rätt klocka som mäter puls. Vi har gjort det så enkelt och smidigt som möjligt för att du ska kunna hitta alla produkter som finns tillgängliga på marknaden just nu. Alltid till...</p>
-          <%= link_to "Fortsätt läs ➝", "/" %>
-        </div>
-      </div>
-      <div class="blog-post">
-        <div class="blog-header">
-          <h3><%= link_to "Billigaste pulsklockorna", "/" %></h3>
-        </div>
-        <div class="blog-content">
-          <p>Hitta den billigaste pulsklockan här  Det är inte lätt att jämföra och hitta pulsklockor har vi märkt och det är därför denna sida skapades. Vill du hitta en billig pulsklocka så har du hittat rätt. Vi skriver om de flesta populära pulsklockorna och aktivitetsarmbanden som finns på marknaden och försöker ge dig som besökare så...</p>
-          <%= link_to "Fortsätt läs ➝", "/" %>
-        </div>
-      </div>
-      <div class="blog-post">
-        <div class="blog-header">
-          <h3><%= link_to "Nu ännu enklare att hitta den billigaste pulsklockan!", "/" %></h3>
-        </div>
-        <div class="blog-content">
-          <p>Vår nya design gör det ännu enklare för dig att hitta den bästa pulsklockan eller aktivitetsarmbandet till det lägsta priset.  Vi har gjort om pulsklockan.com och med mer information om de populäraste produkterna på marknaden kan du läsa och jämföra vilken modell som passar dig bäst. Vi har också gjort om sidan och navigationen så...</p>
-          <%= link_to "Fortsätt läs ➝", "/" %>
-        </div>
-      </div>
-      <div class="blog-post">
-        <div class="blog-header">
-          <h3><%= link_to "Aktivitetsarmband hett just nu", "/" %></h3>
-        </div>
-        <div class="blog-content">
-          <p>Det senaste inom träning Det senast inom träning är aktivitetsarmandet som funkar lika bra till vardaglig aktivitet. Man håller koll på sin motion och hur mycket man rör sig genom ett smidigt armband. Med detta kan du motivera dig själv att röra dig mer och samtidigt hitta den träning som ger dig bäst resultat. Klicka...</p>
-          <%= link_to "Fortsätt läs ➝", "/" %>
-        </div>
-      </div>
-      <div class="blog-post">
-        <div class="blog-header">
-          <h3><%= link_to "Nya pulsklockor i butikerna", "/" %></h3>
-        </div>
-        <div class="blog-content">
-          <p>Nu har det äntligen fyllts på med massor av nya pulsklockor i butikerna Vi har som alltid lagt upp alla de mest populära bland våra märken. Letar du efter en pulsklocka till bästa pris från antingen polar, suunto eller garmin så kolla i menyn till vänster för att hitta det du söker. Vi har också...</p>
-          <%= link_to "Fortsätt läs ➝", "/" %>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
   <div class="divider-container">

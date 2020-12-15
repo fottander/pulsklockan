@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
   root controller: :index, action: :index
 
+  get 'blogg', to: 'articles#all'
+
+  resources :articles, controller: 'articles', as: 'articles', only: [:show, :new, :create, :edit, :update, :index, :destroy]
+
   resources :kategorier, controller: 'categories', as: 'categories', only: [:show, :new, :create, :edit, :update, :index, :destroy]
 
   resources :brands, controller: 'brands', only: [:new, :create, :edit, :update, :index, :destroy]
@@ -21,4 +25,5 @@ Rails.application.routes.draw do
   get '/produkter/:id', to: 'products#show'
 
   resources :brands, controller: 'brands', as: 'brands', only: [:show], path: ''
+
 end

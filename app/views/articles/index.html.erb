@@ -1,0 +1,11 @@
+<h3>Add or edit articles on this page</h3>
+<%= link_to 'Add article', new_article_path, class: 'add-button' %>
+<div class="item-container">
+  <% @articles.each do |article| %>
+    <div class='item-box'>
+      <%= article.id %>
+      <%= article.title %>
+      <%= link_to 'Edit', edit_article_path(article), class: 'reply-button' %><%= link_to 'Delete', article_path(article), data: { confirm: 'Are you sure?' }, method: :delete, class: 'add-button' %>
+    </div>
+  <% end %>
+</div>
