@@ -45,7 +45,7 @@
     <% @categories.each do |category| %>
       <% cache category do %>
         <div id='category-<%= category.id %>'>
-          <%= link_to "#{category.name}" do %>
+          <%= link_to category_path(category.name) do %>
           <div class='brand-card'>
             <div class='brand-header'>
               <h4><%= category.name %></h4>
