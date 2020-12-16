@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   root controller: :index, action: :index
 
+  get 'kontakta', to: 'kontaktas#index'
+
   get 'blogg', to: 'articles#all'
 
   resources :articles, controller: 'articles', as: 'articles', only: [:show, :new, :create, :edit, :update, :index, :destroy]
