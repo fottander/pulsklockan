@@ -28,4 +28,5 @@ Rails.application.routes.draw do
 
   resources :brands, controller: 'brands', as: 'brands', only: [:show], path: ''
 
+
 end
