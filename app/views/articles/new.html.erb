@@ -9,7 +9,7 @@
     <%= f.label :title, 'Titel', class: 'form-text' %>
     <%= f.text_field :title %><br>
     <%= f.label :content, 'Content', class: 'form-text' %>
-    <%= f.rich_text_area :content, rows: 5, style: 'width: 100%' %>
+    <%= f.text_area :content, rows: 5, style: 'width: 100%' %>
     <%= f.submit 'Add', class: 'add-button' %>
   <% end %>
   <br>
