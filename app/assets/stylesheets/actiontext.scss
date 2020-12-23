@@ -8,7 +8,7 @@
 // <action-text-attachment> element we wrap around attachments. Otherwise,
 // images in galleries will be squished by the max-width: 33%; rule.
 
-@import "trix/dist/trix";
+//= require trix
 
 .trix-content {
   .attachment-gallery {
