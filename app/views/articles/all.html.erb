@@ -9,7 +9,7 @@
        <div class="divider-header">
          <h3><%= link_to "#{article.title}", article_path(article), style: 'text-decoration: none; color: white;' %></h3>
        </div>
-       <p><%= truncate(strip_tags(article.rich_text_content.to_s), length: 200) %></p>
+       <p><%= truncate(article.content, length: 200) %></p>
        <%= link_to "Läs mer ➝", article_path(article), style: 'text-decoration: none; color: grey;' %>
      </div>
      <% end %>
