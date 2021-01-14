@@ -22,7 +22,6 @@
   },
   "resolutions": {
     "chokidar": "^3.4.0",
-    "fsevents": "^2.2.0",
     "node-sass": "^5.0.0"
   }
 }
