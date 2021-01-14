@@ -16,9 +16,9 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "babel-loader": "^8.2.2",
     "webpack": "latest",
-    "babel-core": "^7.11.0",
-    "babel-loader": "8.0.0",
     "webpack-dev-server": "^3.11.0"
   },
   "resolutions": {
