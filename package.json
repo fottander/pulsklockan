@@ -22,5 +22,23 @@
   "resolutions": {
     "chokidar": "^3.4.0",
     "node-sass": "^5.0.0"
-  }
+  },
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "babel.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fottander/pulsklockan.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fottander/pulsklockan/issues"
+  },
+  "homepage": "https://github.com/fottander/pulsklockan#readme"
 }
